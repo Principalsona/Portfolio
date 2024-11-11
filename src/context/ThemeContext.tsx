@@ -10,14 +10,14 @@ interface ThemeContextValue {
 
 const DARK_THEME_CONTEXT_VALUE: ThemeContextValue = {
   setTheme: () => {},
-  logoUrl: "/images/logo.png",
+  logoUrl: "https://i.ibb.co/0BcRTKc/principal-sona-college-modified.png",
   aboutUrl: "/images/shikhar.png",
   aboutUrlSmall: "/images/shikhar.png",
 };
 
 const LIGHT_THEME_CONTEXT_VALUE: ThemeContextValue = {
   setTheme: () => {},
-  logoUrl: "/images/logo-light.png",
+  logoUrl: "https://i.ibb.co/0BcRTKc/principal-sona-college-modified.png",
   aboutUrl: "/images/shikhar.png",
   aboutUrlSmall: "/images/shikhar.jpeg",
 };
