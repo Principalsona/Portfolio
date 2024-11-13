@@ -7,7 +7,6 @@ export default class PDFJs {
         iframe.height = '100%';
         if(element.childNodes.length === 0){
             element.appendChild(iframe);
-
         }
     }
 }
