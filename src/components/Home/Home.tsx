@@ -13,12 +13,43 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Socials from "@/components/Socials";
 import Splash from "@/components/Splash";
+import Map from "@/components/Datamap";
 import Form from "@/components/Form";
 import Technical from "@/components/Technical";
 import styles from "./Home.module.css";
 
 const App = ({ initialTheme }: { initialTheme: string }) => {
   const [showForm, setShowForm] = useState(false);
+
+  const data = {
+    'USA': { fillKey: 'USA' },
+    'CAN': { fillKey: 'CAN' },
+};
+
+// Fill colors for different countries
+const fills = {
+    'USA': '#ff7f0e',
+    'CAN': '#2ca02c',
+    defaultFill: '#dddddd', // Default color for countries not defined in data
+};
+
+const mapstyles = {
+  container: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      textAlign: 'center',
+  },
+  title: {
+      fontSize: '32px',
+      marginBottom: '20px',
+      justifyContent: 'left',
+      fontFamily: 'Arial, sans-serif',
+      color: '#333',
+  },
+};
 
   // Check the hash on component mount
   useEffect(() => {
@@ -45,6 +76,17 @@ const App = ({ initialTheme }: { initialTheme: string }) => {
         )}
         {!showForm && <About />}
         {!showForm && <Experiences />}
+        <div style={mapstyles.container}>
+            <h1 style={mapstyles.title}>COUNTRY VISITED</h1>
+            {!showForm && <Map
+                width={800}
+                height={500}
+                scope="world" // You can change this to 'usa' or 'custom' as needed
+                fills={fills}
+                data={data}
+            />}
+        </div>
+
         {!showForm && <Projects />}
         {!showForm && <Technical />}
         {!showForm && <Education />}
