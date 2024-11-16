@@ -1379,6 +1379,33 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
+"@react-jvectormap/core@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@react-jvectormap/core/-/core-1.0.4.tgz"
+  integrity sha512-PefUtLG2Uwu6YVMldTqZCaVu5G+4wS3iQDq5aAV/jY/h8+djIgdSKWb1hEsHk/vb0s2pwallS+VvU7N2xCMncA==
+  dependencies:
+    "@react-jvectormap/lib" "^1.0.3"
+    classnames "^2.3.1"
+
+"@react-jvectormap/jquery-mousewheel@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@react-jvectormap/jquery-mousewheel/-/jquery-mousewheel-1.0.2.tgz"
+  integrity sha512-AmRnBdJfBjDUHreEDDs9qaSo3Q/6oC74m321VuzxkDX6ideVks2n2ouGiMcXq41GdJQoCUzSjfF8KyocL6M+SA==
+  dependencies:
+    jquery "^3.6.0"
+
+"@react-jvectormap/lib@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@react-jvectormap/lib/-/lib-1.0.3.tgz"
+  integrity sha512-EdPYen5GGrny7Mxc8IYvXtSdjTr3EfWjGCXuy6+0Yz9wZDmCfLFfjmuEOZirhe00BJOzi2LpnYMSp0WaJ2BH7Q==
+  dependencies:
+    "@react-jvectormap/jquery-mousewheel" "^1.0.2"
+
+"@react-jvectormap/world@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@react-jvectormap/world/-/world-1.1.2.tgz"
+  integrity sha512-jDSy64DZz4mzEOrVni1zV5rak65+1WZhSGsvAvzHNIMHVx+tdD8R5OikyWUjYte8nxIkOUhQZtVJMK7VOIsmQA==
+
 "@react-native/assets-registry@0.76.2":
   version "0.76.2"
   resolved "https://registry.npmjs.org/@react-native/assets-registry/-/assets-registry-0.76.2.tgz"
@@ -2516,7 +2543,7 @@ ci-info@^3.2.0:
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-3.9.0.tgz"
   integrity sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==
 
-classnames@2.5.1:
+classnames@^2.3.1, classnames@2.5.1:
   version "2.5.1"
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.5.1.tgz"
   integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
@@ -4672,7 +4699,7 @@ jiti@^1.21.0:
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.21.0.tgz"
   integrity sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==
 
-jquery@^3.7.0:
+jquery@^3.6, jquery@^3.6.0, jquery@^3.7.0:
   version "3.7.1"
   resolved "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
   integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
@@ -5921,7 +5948,7 @@ react-devtools-core@^5.3.1:
     shell-quote "^1.6.1"
     ws "^7"
 
-"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, "react-dom@>= 16.8.0", react-dom@>=16.8.0, react-dom@>=18, react-dom@>=18.0, react-dom@>=18.0.0:
+"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, react-dom@^18.3.1, "react-dom@>= 16.8.0", react-dom@>=16.8.0, react-dom@>=18, react-dom@>=18.0, react-dom@>=18.0.0:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
