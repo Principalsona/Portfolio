@@ -7,7 +7,7 @@ import { DARK_COLORS, LIGHT_COLORS } from "theme";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Shikhar Gupta | Software Developer | Cloud Engineer | ML Engineer",
+  title: "Senthil kumar",
   description:
     "Shikhar Gupta is a Computer Science Graduate Student at Arizona State University, who loves learning new things.",
   openGraph: {

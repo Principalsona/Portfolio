@@ -17,6 +17,7 @@ import Map from "@/components/Datamap";
 import Form from "@/components/Form";
 import Technical from "@/components/Technical";
 import styles from "./Home.module.css";
+import FormPage from "@/components/Form/Form";
 
 const App = ({ initialTheme }: { initialTheme: string }) => {
   const [showForm, setShowForm] = useState(false);
@@ -65,6 +66,7 @@ const mapstyles = {
       {/* Socials and Email components are always visible */}
       <Socials />
       <Email />
+      <FormPage/>
 
       <div className={styles.grid}>
         {/* Conditionally render Header if not in #Form page */}

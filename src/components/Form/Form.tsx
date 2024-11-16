@@ -1,4 +1,3 @@
-// Add this line at the top of your file to mark it as a Client Component
 "use client";
 
 import React, { useState } from "react";
@@ -16,6 +15,9 @@ const FormPage: React.FC = () => {
     type: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -23,105 +25,106 @@ const FormPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage("");
 
-    const techsArray = formData.techs.split(",").map((tech) => tech.trim()); // Split techs by comma
+    // Process techs into an array
+    const techsArray = formData.techs.split(",").map((tech) => tech.trim());
     const dataToSend = { ...formData, techs: techsArray };
 
     try {
-      const response = await axios.post("https://your-mongodb-api-link.com/projects", dataToSend);
+      const response = await axios.post("http://localhost:5000/projects", dataToSend); // Change to your deployed backend URL if necessary
       alert("Project added successfully!");
+      setFormData({
+        name: "",
+        techs: "",
+        description: "",
+        github: "",
+        website: "",
+        imgSrc: "",
+        type: "",
+      });
     } catch (error) {
-      console.error("Error adding project:", error);
-      alert("Failed to add project.");
+      setErrorMessage("Failed to submit the form. Please try again.");
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Add New Project</h1>
+      <h1>Submit Your Project</h1>
+      {errorMessage && <p className={styles.error}>{errorMessage}</p>}
       <form onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Project Name
+        <label>
+          Name:
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className={styles.input}
           />
         </label>
-
-        <label className={styles.label}>
-          Technologies (comma-separated)
+        <label>
+          Technologies (comma-separated):
           <input
             type="text"
             name="techs"
             value={formData.techs}
             onChange={handleChange}
             required
-            className={styles.input}
           />
         </label>
-
-        <label className={styles.label}>
-          Description
+        <label>
+          Description:
           <textarea
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
-            className={styles.textarea}
           />
         </label>
-
-        <label className={styles.label}>
-          GitHub Link
+        <label>
+          GitHub URL:
           <input
             type="url"
             name="github"
             value={formData.github}
             onChange={handleChange}
-            className={styles.input}
+            required
           />
         </label>
-
-        <label className={styles.label}>
-          Website Link
+        <label>
+          Website URL:
           <input
             type="url"
             name="website"
             value={formData.website}
             onChange={handleChange}
-            className={styles.input}
           />
         </label>
-
-        <label className={styles.label}>
-          Image Source URL
+        <label>
+          Image URL:
           <input
-            type="text"
+            type="url"
             name="imgSrc"
             value={formData.imgSrc}
             onChange={handleChange}
-            className={styles.input}
           />
         </label>
-
-        <label className={styles.label}>
-          Project Type
+        <label>
+          Type:
           <input
             type="text"
             name="type"
             value={formData.type}
             onChange={handleChange}
-            required
-            className={styles.input}
           />
         </label>
-
-        <button type="submit" className={styles.button}>
-          Submit
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>
