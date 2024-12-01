@@ -11,15 +11,15 @@ interface ThemeContextValue {
 const DARK_THEME_CONTEXT_VALUE: ThemeContextValue = {
   setTheme: () => {},
   logoUrl: "https://i.ibb.co/0BcRTKc/principal-sona-college-modified.png",
-  aboutUrl: "/images/shikhar.png",
-  aboutUrlSmall: "/images/shikhar.png",
+  aboutUrl: "/images/profile.jpg",
+  aboutUrlSmall: "/images/profile.jpg",
 };
 
 const LIGHT_THEME_CONTEXT_VALUE: ThemeContextValue = {
   setTheme: () => {},
   logoUrl: "https://i.ibb.co/0BcRTKc/principal-sona-college-modified.png",
-  aboutUrl: "/images/shikhar.png",
-  aboutUrlSmall: "/images/shikhar.jpeg",
+  aboutUrl: "/images/profile.jpg",
+  aboutUrlSmall: "/images/profile.jpg",
 };
 
 const ThemeContext = React.createContext<ThemeContextValue>(

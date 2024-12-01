@@ -33,13 +33,13 @@ const Contact: React.FC<React.PropsWithChildren<IProps>> = ({
         <p className={styles.message}>
           If you would like to work together or discuss an opportunity for work,
           please use the form or send me an email on{" "}
-          <Highlight>shikharprakhar@gmail.com</Highlight>
+          <Highlight>srr_senthilkumar@yahoo.com</Highlight>
         </p>
         <Button
           className={styles.styledButton}
           onClick={() => {
             window.open(
-              `mailto:shikharprakhar@gmail.com?subject=Job Opportunity&body=${message}`
+              `mailto:srr_senthilkumar@yahoo.com?subject=Job Opportunity&body=${message}`
             );
           }}
         >
