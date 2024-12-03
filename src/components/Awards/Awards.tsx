@@ -25,105 +25,145 @@ const Awards: React.FC = () => {
           </div>
 
           <div className={styles.item}>
-            <Image
-                height={100}
-                width={100}
-                className={styles.image}
-                src="/images/aruba.jpeg"
-                alt="Aruba Networks"
-            ></Image>
-            <div className={styles.connector}/>
-            <div className={styles.infos}>
-              <div className={styles.bullet}>
-                <div className={styles.dotPrimary}>
-                  <div className={styles.dotCore}/>
-                </div>
-                <div className={styles.info}>
-                  <Image
-                      className={styles.mobileImage}
-                      height={100}
-                      width={100}
-                      src="/images/aruba.jpeg"
-                      alt="Aruba Networks"
-                  ></Image>
-                  <p className={styles.time}>May 2021 - July 2022</p>
-                  <h4 className={styles.company}>Aruba Networks</h4>
-                  <h4 className={styles.role}>Senior Software Engineer</h4>
-                  <p className={styles.description}>
-                    ⦿ &nbsp; &nbsp; Led the development of a cross-platform testing solution using Python for a network security
-                    compliance tool, improving
-                    end-to-end testing efficiency and reducing resource requirements by 80%.<br/><br/>
-                    ⦿ &nbsp; &nbsp; Engineered an innovative Golang-based solution for deploying virtual machines across ESXi,
-                    Hyper-V, KVM, AWS, and Azure, resulting in a 60% efficiency boost and streamlined process.<br/><br/>
-                    ⦿ &nbsp; &nbsp; Crafted a comprehensive solution using Python to detect vulnerabilities across product code
-                    databases, ensuring robustness in software development practices resulting in a 15% reduction in
-                    potential security risks.<br/>
-                  </p>
-                </div>
-              </div>
-              <div className={styles.bullet}>
-                <div className={styles.dotSecondary}>
-                  <div className={styles.dotCore}/>
-                </div>
-                <div className={styles.info}>
-                  <p className={styles.time}>July 2019 - April 2021</p>
-                  <h4 className={styles.role}>Software Engineer</h4>
-                  <p className={styles.description}>
-                    ⦿ &nbsp; &nbsp; Contributed to the development of a multi-threaded RESTApi Load Testing tool utilizing Jmeter,
-                    leading to a 10%
-                    improvement in product performance.<br/><br/>
-                    ⦿ &nbsp; &nbsp; Revamped monitoring and logging for a microservice-based architecture with Logstash, Kibana,
-                    Filebeat, Grafana, and InfluxDB, boosting performance visibility and cutting troubleshooting time by 50%.<br/>
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.bullet}>
-                <div className={styles.dotSecondary}>
-                  <div className={styles.dotCore}/>
-                </div>
-                <div className={styles.info}>
-                  <p className={styles.time}>Jan 2019 - Jun 2019</p>
-                  <h4 className={styles.role}>Software Engineer Intern</h4>
-
-                  <p className={styles.description}>
-                    ⦿ &nbsp; &nbsp; Developed a Python-based automated UI testing solution using OpenCV, resulting in a 50% reduction in QA workload.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.item}>
-            <Image
-                className={styles.image}
-                height={100}
-                width={100}
-                src="/images/stylumia.jpeg"
-                alt="Stylumia"
-            />
+            
             <div className={styles.dotPrimary}>
               <div className={styles.dotCore}/>
             </div>
             <div className={styles.connector}/>
             <div className={styles.info}>
-              <Image
-                  className={styles.mobileImage}
-                  height={100}
-                  width={100}
-                  src="/images/stylumia.jpeg"
-                  alt="Stylumia"
-              />
-              <p className={styles.time}>Jun 2018 - Aug 2018</p>
-              <h4 className={styles.company}>Stylumia</h4>
-              <h4 className={styles.role}>
-                Machine Learning Intern
-              </h4>
+              <h4 className={styles.company}>Digital Leaders</h4>
               <p className={styles.description}>
-                ⦿ &nbsp; &nbsp; Crafted a machine learning model for product classification and integrated it with
-                a search bar, resulting in a 10% improvement in search efficiency.
+                ⦿ &nbsp; &nbsp; Recipient of “Digital Leaders” Award for the year 2021 by Infosys Campus Connect Conclave – Principal’s Meet 2021. <br></br>
               </p>
             </div>
           </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>ISTE Best Engineering College Principal</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Recipient of “ISTE Best Engineering College Principal” Award for the year 2018 by 48th Indian Society for Technical Education, Belagavi (Karnataka). <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Best ISTE Chapter Chairman</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Recipient of  “Best ISTE Chapter Chairman” Award for the year 2017 by Tamilnadu Section, Indian Society for Technical Education, New Delhi.  <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Award of Excellence</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Recipient of “Award of Excellence” for the significant contributions towards the development of higher education and research during Indian Technology Congress’16. <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Edu Creators</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Recipient of “Edu Creators” Award from SAI Creators, India, during Teachers’ Day Celebrations on 25th September 2015 held at Chennai <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Research Excellence</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Recipient of “Research Excellence” Award from Indus Foundation, USA, during Indo-Global Education Summit 2013. <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Recognized for inclusion of my biography </h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; 8.	Recognized for inclusion of my biography in the 2012 edition of Marquis’ Who’s Who in the World, a globally distributed publication continues to be recognized internationally as the premier biographical data source of notable living individuals from every significant field of endeavor. <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Rashtriya Vidya Saraswati Puraskar</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Recipient of “Rashtriya Vidya Saraswati Puraskar” award for the outstanding achievement in the field of Education from International Institute of Education and Management, New Delhi, for the year 2010. <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>Life Time Achievement award and Gold Medal</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; 10.	Recipient of “Life Time Achievement award and Gold Medal” for the outstanding achievement in the field of Education from Indian solidarity Council, New Delhi, for the year 2010. <br></br>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore}/>
+            </div>
+            <div className={styles.connector}/>
+            <div className={styles.info}>
+              <h4 className={styles.company}>certificate for excellence</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Meritorious certificate for excellence in teaching by PARK Group of Institutions, Coimbatore during 1997-1998, 1998-1999, & 1999-2000 <br></br>
+              </p>
+            </div>
+          </div>
+
         </div>
       </MaxWidthWrapper>
     </div>

@@ -1,211 +1,135 @@
-.role {
-    color: var(--color-primary);
-    font-weight: 400;
-    font-size: calc(14 / 16 * 1rem);
-    margin-bottom: 8px;
+.experiences {
+  background-color: var(--color-background-dark);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.items {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+    overflow-x: auto;
+    padding: 16px 0;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width */
   }
   
+  /* Adjust scrollbar styling */
+  .items::-webkit-scrollbar {
+    height: 12px; /* Adjust scrollbar height */
+  }
+  
+  .items::-webkit-scrollbar-thumb {
+    background: var(--color-primary); /* Thumb color */
+    border-radius: 6px; /* Rounded corners */
+    border: 2px solid var(--color-background-dark); /* Creates padding effect */
+  }
+  
+  .items::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-light); /* Hover effect */
+  }
+  
+  .items::-webkit-scrollbar-track {
+    background: var(--color-background-dark); /* Track color */
+  }
+  
+
+/*  */
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.dotPrimary {
+  height: 36px; /* Slightly larger */
+  width: 36px;
+  border: 3px solid var(--color-primary); /* Thicker border */
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--color-background-dark);
+  transition: transform 0.2s ease; /* Smooth animation */
+}
+
+.dotPrimary:hover {
+  transform: scale(1.2); /* Hover effect */
+}
+
+.dotCore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 18px;
+  width: 18px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.info {
+  max-width: 250px;
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+.company:hover {
+  color: var(--color-primary-light); /* Hover effect */
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+@media (min-width: 768px) {
   .items {
-    display: flex;
-    position: relative;
-    flex-direction: column;
     gap: 64px;
   }
-  
-  .item {
-    display: flex;
-    align-items: top;
-    position: relative;
-  }
-  
-  .timeline {
-    position: absolute;
-    top: 0;
-    transform: translate(-50%, 0);
-    width: 1px;
-    height: 100%;
-    background-color: var(--color-text-light);
-  
-    left: 24px;
-  }
-  
-  .dotPrimary {
-    height: 32px;
-    width: 32px;
-    border: 1px solid var(--color-text-light);
-    outline: 1px solid var(--color-text-light);
-    outline-offset: 8px;
-    border-radius: 50%;
-    position: relative;
-    flex-shrink: 0;
-  
-    margin: 8px;
-    margin-top: 32px;
-    margin-right: 24px;
-  }
-  
-  .dotSecondary {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    position: relative;
-    flex-shrink: 0;
-  
-    margin: 8px;
-    margin-top: 32px;
-    margin-right: 24px;
-  }
-  
-  .connector {
-    position: absolute;
-    height: 1px;
-    background-color: var(--color-primary);
-    width: 32px;
-    left: 32px;
-    top: 48px;
-  }
-  
-  .bullet {
-    display: flex;
-    align-items: top;
-    position: relative;
-  }
-  
-  .dotCore {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-  }
-  
-  .infos {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    gap: 32px;
-  }
-  
-  .time {
-    font-weight: 400;
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    font-size: calc(12 / 16 * 1rem);
-  }
-  
-  .description {
-    font-weight: 400;
-    max-width: 650px;
-  }
-  
+
   .company {
-    font-size: calc(21 / 16 * 1rem);
+    font-size: 1.125rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .items {
+    gap: 80px;
+  }
+
+  .company {
+    font-size: 1.25rem;
+  }
+}
+.items::-webkit-scrollbar {
+    height: 8px; /* Scrollbar height for horizontal scroll */
   }
   
-  .experiences {
-    background-color: var(--color-background-dark);
-    padding: 32px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
+  .items::-webkit-scrollbar-thumb {
+    background: var(--color-primary); /* Thumb color */
+    border-radius: 4px; /* Rounded corners */
   }
   
-  .image {
-    display: none;
-    height: 200px;
-    width: 200px;
-    border-radius: 8px;
-    border: 1px solid var(--color-primary);
+  .items::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-light); /* Hover effect */
   }
   
-  .mobileImage {
-    display: initial;
-    height: 100px;
-    width: 100px;
-    margin-bottom: 16px;
-    border-radius: 8px;
-    border: 1px solid var(--color-primary);
-  }
-  
-  @media (min-width: 768px) {
-    .items {
-      gap: 80px;
-    }
-  
-    .role {
-      font-size: calc(16 / 16 * 1rem);
-    }
-  
-    .timeline {
-      left: 264px;
-    }
-  
-    .dotPrimary {
-      margin: 84px 48px;
-    }
-  
-    .dotSecondary {
-      margin: auto 48px;
-    }
-  
-    .connector {
-      top: 100px;
-      left: 200px;
-      width: 64px;
-    }
-  
-    .infos {
-      gap: 40px;
-    }
-  
-    .company {
-      font-size: calc(24 / 16 * 1rem);
-    }
-  
-    .experiences {
-      padding: 64px 64px;
-    }
-  
-    .mobileImage {
-      display: none;
-    }
-  
-    .image {
-      display: initial;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .role {
-      font-size: calc(18 / 16 * 1rem);
-    }
-  
-    .timeline {
-      left: 296px;
-    }
-  
-    .dotPrimary {
-      margin: 84px 80px;
-    }
-  
-    .dotSecondary {
-      margin: auto 80px;
-    }
-  
-    .connector {
-      width: 96px;
-    }
-  
-    .company {
-      font-size: calc(28 / 16 * 1rem);
-    }
-  
-    .experiences {
-      gap: 32px;
-    }
+  .items::-webkit-scrollbar-track {
+    background: var(--color-background-dark); /* Track color */
   }
   
