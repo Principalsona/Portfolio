@@ -9,7 +9,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  gap: 64px;
+  gap: 20px;
 }
 
 .item {
@@ -133,7 +133,7 @@
 
 @media (min-width: 768px) {
   .items {
-    gap: 80px;
+    gap: 30px;
   }
 
   .role {

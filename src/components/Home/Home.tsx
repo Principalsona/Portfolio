@@ -46,7 +46,7 @@ const App = ({ initialTheme }: { initialTheme: string }) => {
         )}
         {!showForm && <About />}
         {!showForm && <Experiences />}
-        {!showForm && <Map />}
+        {/* {!showForm && <Map />} */}
         {!showForm && <Projects />}
         {!showForm && <Technical />}
         {!showForm && <Education />}

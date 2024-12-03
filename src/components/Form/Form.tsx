@@ -33,7 +33,7 @@ const FormPage: React.FC = () => {
     const dataToSend = { ...formData, techs: techsArray };
 
     try {
-      const response = await axios.post("http://localhost:5000/projects", dataToSend); // Change to your deployed backend URL if necessary
+      const response = await axios.post("http://localhost:5001/projects", dataToSend); // Change to your deployed backend URL if necessary
       alert("Project added successfully!");
       setFormData({
         name: "",
