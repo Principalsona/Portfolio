@@ -9,137 +9,188 @@ const Experiences: React.FC = () => {
       <MaxWidthWrapper>
         <ConstrainedTitle side="left">Experiences</ConstrainedTitle>
         <div className={styles.items}>
-          <div className={styles.timeline}/>
+          <div className={styles.timeline} />
+
           <div className={styles.item}>
             <Image
-                className={styles.image}
-                height={100}
-                width={100}
-                src="/images/asu-small.jpeg"
-                alt="ASU"
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/sonalogo.jpg"
+              alt="Sona College of Technology"
             />
             <div className={styles.dotPrimary}>
-              <div className={styles.dotCore}/>
+              <div className={styles.dotCore} />
             </div>
-            <div className={styles.connector}/>
+            <div className={styles.connector} />
             <div className={styles.info}>
-              <Image
-                  height={100}
-                  width={100}
-                  className={styles.mobileImage}
-                  src="/images/asu-small.jpeg"
-                  alt="ASU"
-              ></Image>
-              <p className={styles.time}>Aug 2023 - May 2024</p>
-              <h4 className={styles.company}>ASU School of Community Resources and Development</h4>
-              <h4 className={styles.role}>Front End Engineer</h4>
+              <p className={styles.time}>Jan 2018 - Present</p>
+              <h4 className={styles.company}>Sona College of Technology</h4>
+              <h4 className={styles.role}>Principal</h4>
               <p className={styles.description}>
-                ⦿ &nbsp; &nbsp; Leading the development of a dashboard using React.js to provide a comprehensive
-                view of climate and community,
-                empowering users to build resilience and leverage actionable insights.<br></br>
-                ⦿ &nbsp; &nbsp; Designing an interface featuring a GIS-based mapping and analytics tool using
-                Leaflet with visualizations using D3.js.
+                ⦿ &nbsp; &nbsp; Leading academic and administrative operations, ensuring the institution's growth and development in technology education.<br />
+                ⦿ &nbsp; &nbsp; Driving collaborations with industry leaders to align education with emerging technologies.
               </p>
             </div>
           </div>
 
           <div className={styles.item}>
             <Image
-                height={100}
-                width={100}
-                className={styles.image}
-                src="/images/aruba.jpeg"
-                alt="Aruba Networks"
-            ></Image>
-            <div className={styles.connector}/>
-            <div className={styles.infos}>
-              <div className={styles.bullet}>
-                <div className={styles.dotPrimary}>
-                  <div className={styles.dotCore}/>
-                </div>
-                <div className={styles.info}>
-                  <Image
-                      className={styles.mobileImage}
-                      height={100}
-                      width={100}
-                      src="/images/aruba.jpeg"
-                      alt="Aruba Networks"
-                  ></Image>
-                  <p className={styles.time}>May 2021 - July 2022</p>
-                  <h4 className={styles.company}>Aruba Networks</h4>
-                  <h4 className={styles.role}>Senior Software Engineer</h4>
-                  <p className={styles.description}>
-                    ⦿ &nbsp; &nbsp; Led the development of a cross-platform testing solution using Python for a network security
-                    compliance tool, improving
-                    end-to-end testing efficiency and reducing resource requirements by 80%.<br/><br/>
-                    ⦿ &nbsp; &nbsp; Engineered an innovative Golang-based solution for deploying virtual machines across ESXi,
-                    Hyper-V, KVM, AWS, and Azure, resulting in a 60% efficiency boost and streamlined process.<br/><br/>
-                    ⦿ &nbsp; &nbsp; Crafted a comprehensive solution using Python to detect vulnerabilities across product code
-                    databases, ensuring robustness in software development practices resulting in a 15% reduction in
-                    potential security risks.<br/>
-                  </p>
-                </div>
-              </div>
-              <div className={styles.bullet}>
-                <div className={styles.dotSecondary}>
-                  <div className={styles.dotCore}/>
-                </div>
-                <div className={styles.info}>
-                  <p className={styles.time}>July 2019 - April 2021</p>
-                  <h4 className={styles.role}>Software Engineer</h4>
-                  <p className={styles.description}>
-                    ⦿ &nbsp; &nbsp; Contributed to the development of a multi-threaded RESTApi Load Testing tool utilizing Jmeter,
-                    leading to a 10%
-                    improvement in product performance.<br/><br/>
-                    ⦿ &nbsp; &nbsp; Revamped monitoring and logging for a microservice-based architecture with Logstash, Kibana,
-                    Filebeat, Grafana, and InfluxDB, boosting performance visibility and cutting troubleshooting time by 50%.<br/>
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.bullet}>
-                <div className={styles.dotSecondary}>
-                  <div className={styles.dotCore}/>
-                </div>
-                <div className={styles.info}>
-                  <p className={styles.time}>Jan 2019 - Jun 2019</p>
-                  <h4 className={styles.role}>Software Engineer Intern</h4>
-
-                  <p className={styles.description}>
-                    ⦿ &nbsp; &nbsp; Developed a Python-based automated UI testing solution using OpenCV, resulting in a 50% reduction in QA workload.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.item}>
-            <Image
-                className={styles.image}
-                height={100}
-                width={100}
-                src="/images/stylumia.jpeg"
-                alt="Stylumia"
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/agni.png"
+              alt="Agni College of Technology"
             />
             <div className={styles.dotPrimary}>
-              <div className={styles.dotCore}/>
+              <div className={styles.dotCore} />
             </div>
-            <div className={styles.connector}/>
+            <div className={styles.connector} />
             <div className={styles.info}>
-              <Image
-                  className={styles.mobileImage}
-                  height={100}
-                  width={100}
-                  src="/images/stylumia.jpeg"
-                  alt="Stylumia"
-              />
-              <p className={styles.time}>Jun 2018 - Aug 2018</p>
-              <h4 className={styles.company}>Stylumia</h4>
-              <h4 className={styles.role}>
-                Machine Learning Intern
-              </h4>
+              <p className={styles.time}>Feb 2012 - Jan 2018</p>
+              <h4 className={styles.company}>Agni College of Technology</h4>
+              <h4 className={styles.role}>Principal</h4>
               <p className={styles.description}>
-                ⦿ &nbsp; &nbsp; Crafted a machine learning model for product classification and integrated it with
-                a search bar, resulting in a 10% improvement in search efficiency.
+                ⦿ &nbsp; &nbsp; Directed institutional planning and quality improvement initiatives for student success.<br />
+                ⦿ &nbsp; &nbsp; Implemented innovative teaching methodologies to enhance learning outcomes.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <Image
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/PPg.jpg"
+              alt="PPG Institute of Technology"
+            />
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore} />
+            </div>
+            <div className={styles.connector} />
+            <div className={styles.info}>
+              <p className={styles.time}>Jun 2008 - Feb 2012</p>
+              <h4 className={styles.company}>PPG Institute of Technology</h4>
+              <h4 className={styles.role}>Principal</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Enhanced curriculum with industry-relevant content for technical education.<br />
+                ⦿ &nbsp; &nbsp; Championed research initiatives leading to increased publications and patents.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <Image
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/Higher.jpg"
+              alt="Higher College of Technology"
+            />
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore} />
+            </div>
+            <div className={styles.connector} />
+            <div className={styles.info}>
+              <p className={styles.time}>Oct 2005 - May 2008</p>
+              <h4 className={styles.company}>Higher College of Technology</h4>
+              <h4 className={styles.role}>Head of Section and Registrar</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Supervised departmental operations to ensure academic excellence.<br />
+                ⦿ &nbsp; &nbsp; Coordinated scheduling and resource allocation for optimal performance.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <Image
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/tamil.jpg"
+              alt="Tamilnadu College of Engineering"
+            />
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore} />
+            </div>
+            <div className={styles.connector} />
+            <div className={styles.info}>
+              <p className={styles.time}>Various Roles (1985 - 2005)</p>
+              <h4 className={styles.company}>Tamilnadu College of Engineering</h4>
+              <h4 className={styles.role}>Various Positions (Senior Lecturer, Assistant Professor, Draughtsman, etc.)</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Mentored students across engineering disciplines, contributing to academic success.<br />
+                ⦿ &nbsp; &nbsp; Conducted research and published papers on emerging engineering topics.
+              </p>
+            </div>
+          </div>
+
+          {/* <div className={styles.item}>
+            <Image
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/images/draughtsman.jpeg"
+              alt="Draughtsman"
+            />
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore} />
+            </div>
+            <div className={styles.connector} />
+            <div className={styles.info}>
+              <p className={styles.time}>Aug 1985 - Jun 1990</p>
+              <h4 className={styles.company}>Tamilnadu College of Engineering</h4>
+              <h4 className={styles.role}>Draughtsman</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Prepared detailed engineering drawings for civil and mechanical projects.<br />
+                ⦿ &nbsp; &nbsp; Assisted in project documentation and technical report generation.
+              </p>
+            </div>
+          </div> */}
+
+          <div className={styles.item}>
+            <Image
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/Ts.jpg"
+              alt="Instructor"
+            />
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore} />
+            </div>
+            <div className={styles.connector} />
+            <div className={styles.info}>
+              <p className={styles.time}>Aug 1984 - Aug 1985</p>
+              <h4 className={styles.company}>T.S. Dhandapani ITI</h4>
+              <h4 className={styles.role}>Instructor</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Conducted vocational training for students in industrial technical skills.<br />
+                ⦿ &nbsp; &nbsp; Developed training materials to ensure effective skill development.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.item}>
+            <Image
+              className={styles.image}
+              height={100}
+              width={100}
+              src="/Experiance/thermal.jpg"
+              alt="Site Engineer"
+            />
+            <div className={styles.dotPrimary}>
+              <div className={styles.dotCore} />
+            </div>
+            <div className={styles.connector} />
+            <div className={styles.info}>
+              <p className={styles.time}>Mar 1984 - Jul 1984</p>
+              <h4 className={styles.company}>Thermal Power Station, Mettur</h4>
+              <h4 className={styles.role}>Site Engineer</h4>
+              <p className={styles.description}>
+                ⦿ &nbsp; &nbsp; Oversaw on-site construction activities and ensured project adherence to designs.<br />
+                ⦿ &nbsp; &nbsp; Coordinated with teams to manage timelines and resource utilization.
               </p>
             </div>
           </div>
