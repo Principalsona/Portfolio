@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 };
 
 function RootLayout({children}: { children: React.ReactNode }) {
-    const theme = "light";
-    const themeColors = theme === "light" ? LIGHT_COLORS: DARK_COLORS;
+    const theme = "dark";
+    const themeColors = theme === "dark" ? DARK_COLORS: LIGHT_COLORS;
 
   return (
       <html
