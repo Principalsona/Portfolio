@@ -7,9 +7,7 @@ export interface IProps {
   degree: string;
   school: string;
   courses: string[];
-  start: number;
-  end: number;
-  gpa: string;
+  year: string;
   imgSrc: string;
   side: "left" | "right";
 }
@@ -18,9 +16,7 @@ const College: React.FC<IProps> = ({
   degree,
   school,
   courses,
-  start,
-  end,
-  gpa,
+  year,
   imgSrc,
   side,
   ...delegated
@@ -57,10 +53,8 @@ const College: React.FC<IProps> = ({
           ))}
         </ul>
         <ul className={clsx(styles.data, styles[side])}>
-          <p className={styles.time}>
-            {start} - {end}
-          </p>
-          <p className={styles.gpa}>GPA: {gpa}</p>
+
+          <p className={styles.year}>{year}</p>
         </ul>
       </div>
     </div>

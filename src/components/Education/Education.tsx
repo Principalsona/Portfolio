@@ -4,37 +4,59 @@ import { ConstrainedTitle } from "@/components/SectionTitle";
 import styles from "./Education.module.css";
 
 const COLLEGES = [
-    {
-        degree: "Master of Science in Computer Science",
-        school: "Arizona State University",
-        courses: [
-            "Cloud Computing",
-            "Data Visualization",
-            "Data Processing at Scale",
-            "Natural Language Processing",
-            "Data Mining",
-            "Image Analytics & Informatics",
-        ],
-        start: 2022,
-        end: 2024,
-        gpa: "4.0",
-        imgSrc: "/images/asu.jpeg",
-    },
-    {
-        degree: "Bachelor of Engineering in Computer Science",
-        school: "PES University",
-        courses: [
-            "Data Structures & Algorithms",
-            "Big Data",
-            "Operating Systems",
-            "Advanced Computer Networks",
-            "Advanced Machine Learning",
-        ],
-        start: 2015,
-        end: 2019,
-        gpa: "3.74",
-        imgSrc: "/images/pesu.jpeg",
-    },
+  {
+    "degree": "DOCTOR OF PHILOSOPHY IN CIVIL ENGINEERING (Ph.D.)",
+    "school": "P.S.G. College of Technology",
+    "courses": [
+      "Advanced Structural Engineering",
+      "Geotechnical Analysis",
+      "Hydrology and Water Resources Engineering",
+      "Environmental Impact Assessment",
+      "Research Methodologies in Civil Engineering"
+    ],
+    "year": "Year of Completion: 2004",
+    "imgSrc": "/Education/PSG.png"
+  },
+  {
+    "degree": "MASTER OF CIVIL ENGINEERING",
+    "school": "P.S.G. College of Technology",
+    "courses": [
+      "Structural Dynamics",
+      "Advanced Concrete Technology",
+      "Transportation Engineering",
+      "Finite Element Methods",
+      "Construction Project Management"
+    ],
+    "year": "Year of Completion: 1993",
+    "imgSrc": "/Education/psg1.jpg"
+  },
+  {
+    "degree": "BACHELOR OF CIVIL ENGINEERING",
+    "school": "GCT of Coimbatore",
+    "courses": [
+      "Surveying",
+      "Fluid Mechanics",
+      "Strength of Materials",
+      "Transportation Engineering",
+      "Design of Steel Structures"
+    ],
+    "year": "Year of Completion: 1990",
+    "imgSrc": "/Education/gct.jpg"
+  },
+  {
+    "degree": "DIPLOMA IN CIVIL ENGINEERING",
+    "school": "V.L.B.J. Polytechnic College",
+    "courses": [
+      "Building Materials",
+      "Basic Surveying",
+      "Construction Technology",
+      "Irrigation Engineering",
+      "Estimating and Costing"
+    ],
+    "year": "Year of Completion: 1984",
+    "imgSrc": "/Education/VLBJ.jpg"
+  }
+  
 ];
 
 const Education: React.FC = () => {
@@ -45,6 +67,8 @@ const Education: React.FC = () => {
         <div className={styles.collegeList}>
           <College {...COLLEGES[0]} side="left" />
           <College {...COLLEGES[1]} side="right" />
+          <College {...COLLEGES[2]} side="left" />
+          <College {...COLLEGES[3]} side="right" />
         </div>
       </MaxWidthWrapper>
     </div>
