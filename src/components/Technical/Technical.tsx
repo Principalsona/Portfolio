@@ -29,10 +29,10 @@ const Technical: React.FC = () => {
 
       <div className={styles.skillList}>
         <DesktopTitle className={clsx(styles.technicalTitle)} side="left">
-          Technical Skills
+          Research Papers
         </DesktopTitle>
         <MobileTitle className={clsx(styles.technicalTitle)} side="right">
-          Technical Skills
+          Research Papers
         </MobileTitle>
 
         <ul className={styles.options}>

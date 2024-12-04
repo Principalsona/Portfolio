@@ -1,8 +1,8 @@
 export const SKILLS = [
     {
-        name: "Python",
+        name: "Fibre Reinforcement ",
         level: 5,
-        content: "I am proficient in Python and have used it extensively for backend development, data analysis, and machine learning projects. I am familiar with libraries like NumPy, Pandas, Matplotlib, and Scikit-learn."
+        content: "Senthilkumar, S.R.R., and Natesan, S.C., “Effect of Fibre Reinforcement on Restrained Shrinkage Cracking of Cementitious Composites”, Proceedings of the International Conference on Recent Trends in Concrete Technology and Structures, D.L. Venkatesh Babu, et al. (Eds.), Kumaraguru College of Technology, Coimbatore, Tamilnadu, India, Vol.2, September 2003, pp. 427 - 436."
     },
     {
         name: "Java",

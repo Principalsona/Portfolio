@@ -13,13 +13,13 @@
 
 .name {
   white-space: nowrap;
-  font-size: calc(35 / 16 * 1rem);
+  /* font-size: calc(35 / 16 * 1rem); */
   margin-bottom: -16px;
 }
 
 @media (min-width: 768px) {
   .name {
-    font-size: calc(64 / 16 * 1rem);
+    font-size: calc(32 / 16 * 1rem);
     margin-bottom: -32px;
   }
 }

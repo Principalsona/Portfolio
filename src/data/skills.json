@@ -1,139 +1,109 @@
 [
     {
-        "name": "Python",
+        "name": "Fibre Reinforcement ",
         "level": 5,
-        "content": "I am proficient in Python and have used it extensively for backend development, data analysis, and machine learning projects. I am familiar with libraries like NumPy, Pandas, Matplotlib, and Scikit-learn."
+        "content": "Senthilkumar, S.R.R., and Natesan, S.C., “Effect of Fibre Reinforcement on Restrained Shrinkage Cracking of Cementitious Composites”, Proceedings of the International Conference on Recent Trends in Concrete Technology and Structures, D.L. Venkatesh Babu, et al. (Eds.), Kumaraguru College of Technology, Coimbatore, Tamilnadu, India, Vol.2, September 2003, pp. 427 - 436."
     },
     {
-        "name": "Java",
+        "name": "Model to Predict Plastic Shrinkage",
         "level": 5,
-        "content": "I have strong Java skills and have worked on several projects using Java. I am familiar with Java EE, Spring Boot, Hibernate, and have experience with RESTful web services."
+        "content": "Senthilkumar, S.R.R., and Natesan, S.C., “Model to Predict Plastic Shrinkage Cracking of Fibre Reinforced Concrete”, Proceedings of ICFRC International Conference on Fibre Composites, High Performance Concretes and Smart Materials, V.S. Parameswaran, (Ed.), Chennai, Tamilnadu, India, Vol. 1, January 2004, pp. 257 - 272."
     },
     {
-        "name": "C++",
+        "name": "Prevention of Plastic Shrinkage ",
         "level": 4,
-        "content": "I have intermediate-level skills in C++ and have used it for implementing algorithms, data structures, and system programming. I am familiar with STL, Boost, and have experience with multithreading and networking."
+        "content": "Senthilkumar, S.R.R., and Natesan, S.C., “Prediction and Prevention of Plastic Shrinkage Cracking of Cementitious Composites”, Proceedings of International Conference on “Our World in Concrete and Structures – OW04”, held at Hotel New Otani, Singapore, August 2004, pp. 451-460."
     },
     {
-        "name": "JavaScript",
+        "name": "Waste Prognosis",
         "level": 4,
-        "content": "I am proficient in JavaScript and have used it for frontend development, web applications, and server-side scripting. I am familiar with frameworks like React.js, Node.js, and Express.js."
+        "content": "Nithya, R., Senthilkumar, S.R.R., and Velumani, A., “A study on Waste Prognosis based on Socio-Economic indicators using Artificial Neural Network in India”, Proceedings of International Conference and Exhibition on Solid Waste and Environment, “ANSWAI CONF-2009”,  held at Anna University Coimbatore, India, during August 2009."
     },
     {
-        "name": "Docker",
+        "name": "Modelling Elastic Modulus ",
         "level": 4,
-        "content": "I have experience with Docker and have used it for containerizing my applications, managing dependencies, and simplifying deployment processes."
+        "content": "Alfin Ashmita, F., Senthilkumar, S.R.R., Chithra, S., and Chinnaraju, K., “Modelling Elastic Modulus of High Performance Concrete Using Artificial Neural Networks” Presented in  International Conference on Explorations & Innovations in Engineering and Technology ICEIET – 2016 conducted by Hindusthan Institute of Technology, Coimbatore on 18.3.2016 and 19.3.2016."
     },
     {
-        "name": "Kubernetes",
+        "name": "Recycled Coarse Aggregate",
         "level": 4,
-        "content": "I have experience with Kubernetes and have used it for orchestrating containerized applications, managing clusters, and scaling applications."
+        "content": "Seethapathi, M., Senthilkumar, S.R.R., and Chinnaraju, K., “Study On Properties of Self Compacting Concrete Using Recycled Coarse Aggregate” in “Innovation and Advances In Civil Engineering Towards Green and Sustainable Systems”, presented in International Conference organized by Coimbatore Institute of Technology, Coimbatore during 28-30  April 2014."
     },
     {
-        "name": "Machine Learning",
+        "name": "Application of Eco Sand ",
         "level": 5,
-        "content": "I have a strong understanding of machine learning concepts and have implemented various algorithms for classification, regression, clustering, and reinforcement learning. I am familiar with libraries like TensorFlow, PyTorch, and Scikit-learn."
+        "content": "Seethapathi, M., Senthilkumar, S.R.R., and Chinnaraju, K., “Study on Application of Eco Sand in Self Compacting Concrete” in “Sustainable Practices in Civil Engineering”,  presented in International Conference organized by K.P.R. Institute of Technology, Coimbatore during 16 – 18 of April 2015."
     },
     {
-        "name": "Natural Language Processing",
+        "name": "Fly Ash ",
         "level": 5,
-        "content": "I have experience with natural language processing and have worked on projects involving text classification, sentiment analysis, named entity recognition, and text generation. I am familiar with libraries like NLTK, spaCy, and Gensim."
+        "content": "Seethapathi, M., Senthilkumar, S.R.R., and Chinnaraju, K., “Study On Fly Ash Based Self Compacting Concrete With Aggregate Replacements” in “Engineering Technology and Sciences”, presented in International Conference organized by Muthayammal Engineering Institutions, Nammakkal  on 18 & 19 March 2016."
     },
     {
-        "name": "HTML5",
-        "level": 5,
-        "content":
-            "HTML was the first language I learned when I started learning programming. Over the last 8 years, I have used it to build websites and web applications. I have experience with HTML5 APIs such as Canvas, WebSockets, and Web Workers."
-    },
-    {
-        "name": "CSS3",
+        "name": "ABAQUS",
         "level": 5,
         "content":
-            "My expertise in CSS is one of the things that sets me apart from other developers. I have a deep understanding of the CSS box model, flexbox, grid, and responsive design. I have experience with CSS-in-JS libraries such as Styled Components as well as CSS preprocessors such as SASS."
+            "Prabhu, S., Chithra, S., Senthilkumar, S.R.R., Chinnaraju, K., and Chithra, R. “Analytical Study on the behaviour of High Performance Concrete beam by Partially Replacing Natural Sand with Copper Slag using ABAQUS” in 1st International Conference on Advanced Engineering and Technology for Sustainable Development (AETSD) 2015 conducted by Karpagam College of Engineering, Coimbatore on 05.03.2015 and 06.03.2015."
     },
     {
-        "name": "React.js",
-        "level": 4,
-        "content": "I have experience with React.js and have used it for building user interfaces, single-page applications, and progressive web apps."
-    },
-    {
-        "name": "Node.js",
-        "level": 4,
-        "content": "I have experience with Node.js and have used it for building server-side applications, RESTful APIs, and real-time web applications."
-    },
-    {
-        "name": "SQL (Postgres)",
-        "level": 4,
-        "content": "I have experience with SQL and have used PostgreSQL for managing relational databases, writing complex queries, and optimizing database performance."
-    },
-    {
-        "name": "Jenkins",
+        "name": "GIS",
         "level": 5,
         "content":
-            "While I am not an expert in Jenkins, I have used it to build CI/CD pipelines for an academic project where I built a Jenkins pipeline and used it to deploy a NodeJS application to AWS."
+            "Nithya, R., Senthilkumar, S.R.R., and Velumani, A., “Location of Collection Bins Using GIS in Coimbatore City”, Proceedings of National Conference, held at Government College of Technology, Coimbatore,  India, during 23-24, March 2011."
     },
     {
-        "name": "MongoDB",
+        "name": "Silica Fume and Nano Silica",
+        "level": 4,
+        "content": "Kamalakannan, P., Chithra, S., Senthilkumar, S.R.R., and Chinnaraju, K., “Workability and Strength Comparison of High Performance Concrete containing Silica Fume and Nano Silica”, presented in the TEQIP sponsored National Conference on ‘Research Congress in Civil Engineering - RCCE 14’ held at Government College of Technology, Coimbatore during 17th  April 2013."
+    },
+    {
+        "name": "Nano Silica",
+        "level": 4,
+        "content": "Saravanan, B., Chithra, S., Senthilkumar, S.R.R., and Chinnaraju, K.,  “Preparation of Nano Silica using Sol-Gel method and to compare the properties of Cement Mortar incorporating Silica Fume and NanoSilica” presented in National conference on ‘Recent Innovations in Structures and Environment - RISE 14’ held at Alagappa Chettiar College of Engineering and Technology, Karaikudi during 28th  May 2014."
+    },
+    {
+        "name": "Machine Learning Algorithm ",
+        "level": 4,
+        "content": "Senthilkumar, S.R.R., “Application of Machine Learning Algorithm for Reinforcement details in Structural Members” presented in 10th National Conference on ‘Innovation in Concrete and Constructions – ICON’23 organized by Sona College of Technology on 10th May 2023."
+    },
+    {
+        "name": "Virtual Reality ",
         "level": 5,
         "content":
-            "I have used MongoDB to build REST APIs and GraphQL APIs. I opt to use MongoDB when I want to build a prototype quickly and iterate on it, without worrying about the schema. I have experience with Mongoose for NodeJS and PyMongo for Python."
+            "Senthilkumar, S.R.R., “Application of Virtual Reality Took for Building” presented in 10th National Conference on ‘Innovation in Concrete and Constructions – ICON’23 organized by Sona College of Technology on 10th May 2023."
     },
     {
-        "name": "Go",
-        "level": 4,
-        "content":
-            "I am fairly new to Go since I only started using it during my internship at TuneIn, where I used it to build a microservice, backed by gRPC and Redis. I have experience with the Go testing framework as well as concurrency patterns such as channels and goroutines."
-    },
-    {
-        "name": "Kafka",
+        "name": "Educational Institutions",
         "level": 5,
         "content":
-            "While I am yet to use Kafka in a professional setting, I have used it to build a distributed system for an academic project. I have experience with Kafka Streams and Zookeeper"
+            "Senthilkumar S.R.R., Implementation of NEP – 2020 “Challenges and Opportunities for Educational Institutions” presented in the National Conference organized by Education Promotion Society for India, November 30, 2021."
     },
     {
-        "name": "Redis",
+        "name": "Hybrid Fibre ",
         "level": 4,
         "content":
-            "I have used Redis Streams to build a data communication channel between two microservices for facilitating live streaming of data. "
+            "Mukesh, s., Chithra, S., Senthilkumar, S.R.R., Chinnaraju, K., Chithra, R., “Prediction of slump flow of Hybrid Fibre Reinforced High Performance Concrete” in the TEQIP-II Sponsored National Conference on “Materials and Technologies for Sustainable Infrastructure (MTSI ’16)” conducted by Department of Civil Engineering (S), Government College of Technology, Coimbatore on 29.04.2016 and 30.04.2016."
     },
     {
-        "name": "NumPy",
+        "name": "Prediction of flexural strength ",
         "level": 5,
-        "content": "I am proficient in NumPy, a fundamental package for scientific computing with Python. I have used NumPy for array manipulation, linear algebra, and mathematical operations."
+        "content":
+            "Alfin Ashmita, F., Chithra, S., Senthilkumar, S.R.R., Chinnaraju, K., presented a paper on “Prediction of flexural strength of High Performance Concrete with copper slag and micro/nano silica particles” in the TEQIP-II Sponsored National Conference on “Materials and Technologies for Sustainable Infrastructure (MTSI ’16)” conducted by Department of Civil Engineering (S), Government College of Technology, Coimbatore on 29.04.2016 and 30.04.2016."
     },
     {
-        "name": "Pandas",
+        "name": "Self Compacting Concrete",
+        "level": 4,
+        "content":
+            "Seethapathi, M., Senthilkumar, S.R.R., and Chinnaraju, K., “Experimental Study on High Performance Self Compacting Concrete” in “Advances in Concrete and Construction Technology”, presented in National Conference organized by K.S.R. College of Engineering, Thiruchengode during 19 – 20 of April 2012."
+    },
+    {
+        "name": "copper slag ",
         "level": 5,
-        "content": "I am proficient in Pandas, a fast, powerful, and flexible open-source data analysis and manipulation tool. I have used Pandas for data cleaning, data exploration, and data analysis."
+        "content": "Elangovan, P., Chithra, S., and Senthilkumar, S.R.R., “Experimental study on the effect of copper slag as a fine aggregate on the properties of High Performance Cement Mortar cubes” presented in the ‘National Conference on Recent Advancements in Geotechnical – NCRAG 2012’ held at Government College of Technology, Coimbatore during 20th  April 2012. "
     },
     {
-        "name": "Boto3",
-        "level": 4,
-        "content": "I have experience with Boto3, the Amazon Web Services (AWS) SDK for Python. I have used Boto3 to interact with AWS services, such as EC2, S3, DynamoDB, and Lambda."
-    },
-    {
-        "name": "Leaflet",
-        "level": 4,
-        "content": "I have experience with Leaflet, an open-source JavaScript library for interactive maps. I have used Leaflet to create custom maps, add markers, and display data on maps."
-    },
-    {
-        "name": "Helm",
-        "level": 4,
-        "content": "I have experience with Helm, a package manager for Kubernetes. I have used Helm to manage Kubernetes applications, install charts, and upgrade releases."
-    },
-    {
-        "name": "Azure",
-        "level": 4,
-        "content": "I have experience with Microsoft Azure, a cloud computing service. I have used Azure to deploy and manage applications, store data, and run virtual machines."
-    },
-    {
-        "name": "Kotlin",
-        "level": 4,
-        "content": "I have experience with Kotlin, a statically typed programming language for the Java Virtual Machine (JVM). I have used Kotlin to develop Android applications and backend services."
-    },
-    {
-        "name": "Bash",
-        "level": 4,
-        "content": "I have experience with Bash, a Unix shell and command language. I have used Bash to write shell scripts for automation, system administration, and data processing."
+        "name": "Demolished Concrete",
+        "level": 5,
+        "content": "Senthilkumar, S.R.R., Vijaya Kumar, K., and Gnanavelu, P., “Experimental Study on Recycling of Demolished Concrete”, Proceedings of the 19th National Convention of Architectural Engineers (AEC – 2003), organized by Department of  Architecture & Panning, MANIT, Bhopal, India, November 2003."
     }
 ]
