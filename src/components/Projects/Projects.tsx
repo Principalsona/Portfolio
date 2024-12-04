@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
         }
         const data = await response.json();
         setProjects(data);
-        const initialVisibleCount = window.innerWidth >= 768 ? 3 : 6;
+        const initialVisibleCount = window.innerWidth > 768 ? 6 : 3;
         setVisibleProjects(data.slice(0, initialVisibleCount)); // Show initial projects based on screen sizeconsole.log('Projects component mounte
       } catch (err) {
         setError(err.message);
