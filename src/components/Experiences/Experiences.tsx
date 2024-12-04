@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Experiences: React.FC = () => {
   return (
-    <div className={styles.experiences}>
+    <div id="Experiences" className={styles.experiences}>
       <MaxWidthWrapper>
         <ConstrainedTitle side="left">Experiences</ConstrainedTitle>
         <div className={styles.items}>
