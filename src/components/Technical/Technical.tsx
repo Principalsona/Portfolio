@@ -20,7 +20,7 @@ const Technical: React.FC = () => {
   }
 
   return (
-    <div className={styles.technical}>
+    <div id="Technical" className={styles.technical}>
       <div className={styles.display}>
         <h3 className={styles.title}>{activeSkill.name}</h3>
         <p className={styles.content}>{activeSkill.content}</p>

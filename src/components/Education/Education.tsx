@@ -61,7 +61,7 @@ const COLLEGES = [
 
 const Education: React.FC = () => {
   return (
-    <div className={styles.education}>
+    <div id="Education" className={styles.education}>
       <MaxWidthWrapper>
         <ConstrainedTitle side="left">Education</ConstrainedTitle>
         <div className={styles.collegeList}>
