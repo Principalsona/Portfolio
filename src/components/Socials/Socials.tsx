@@ -9,22 +9,14 @@ import styles from "./Socials.module.css";
 import clsx from "clsx";
 
 const enum ESocials {
-    GITHUB_URL = "https://github.com/Shikhar97",
-    INSTAGRAM_URL = "https://www.instagram.com/shikharguptaaa/",
-    TWITTER_URL = "",
-    LINKEDIN_URL = "https://www.linkedin.com/in/shikharg97/",
+    INSTAGRAM_URL = "https://www.instagram.com/srr_senthilkumar?igsh=MW51M3RpOGl2cGRyMw==",
+    TWITTER_URL = "https://x.com/SenthilkumarSrr?t=sqnKa5BlU1OkeRYuzZgBiA&s=08",
+    LINKEDIN_URL = "https://www.linkedin.com/in/dr-senthilkumar-s-r-r?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
 }
 
 export const SocialIcons: React.FC = () => {
   return (
     <>
-      <IconLink
-        className={styles.iconLink}
-        href={ESocials.GITHUB_URL}
-        target="_blank"
-      >
-        <FaGithubAlt />
-      </IconLink>
       <IconLink
         className={styles.iconLink}
         href={ESocials.INSTAGRAM_URL}
