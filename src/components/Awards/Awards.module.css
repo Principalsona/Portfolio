@@ -1,23 +1,26 @@
 .experiences {
-  background-color: var(--color-background-dark);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.items {
+    background-color: var(--color-background-dark);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .items {
     display: flex;
     position: relative;
     flex-direction: row;
     align-items: flex-start;
     gap: 48px;
-    overflow-x: auto;
+    overflow-x: auto; /* Allow horizontal scrolling */
     padding: 16px 0;
     box-sizing: border-box; /* Ensures padding is included in the element's total width */
+    width: 100%; /* Ensures it takes full width of the parent */
+    max-width: 100vw; /* Prevents it from overflowing the viewport */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--color-primary) var(--color-background-dark); /* For Firefox */
   }
   
-  /* Adjust scrollbar styling */
   .items::-webkit-scrollbar {
     height: 12px; /* Adjust scrollbar height */
   }
@@ -36,100 +39,80 @@
     background: var(--color-background-dark); /* Track color */
   }
   
-
-/*  */
-
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  min-width: 200px;
-  text-align: center;
-}
-
-.dotPrimary {
-  height: 36px; /* Slightly larger */
-  width: 36px;
-  border: 3px solid var(--color-primary); /* Thicker border */
-  border-radius: 50%;
-  position: relative;
-  background-color: var(--color-background-dark);
-  transition: transform 0.2s ease; /* Smooth animation */
-}
-
-.dotPrimary:hover {
-  transform: scale(1.2); /* Hover effect */
-}
-
-.dotCore {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 18px;
-  width: 18px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-}
-
-.info {
-  max-width: 250px;
-}
-
-.company {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  transition: color 0.2s ease;
-}
-
-.company:hover {
-  color: var(--color-primary-light); /* Hover effect */
-}
-
-.description {
-  font-size: 0.875rem;
-  color: var(--color-text-light);
-}
-
-@media (min-width: 768px) {
-  .items {
-    gap: 64px;
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 250px; /* Ensure items have a minimum width */
+    text-align: center;
   }
-
+  
+  .dotPrimary {
+    height: 36px; /* Slightly larger */
+    width: 36px;
+    border: 3px solid var(--color-primary); /* Thicker border */
+    border-radius: 50%;
+    position: relative;
+    background-color: var(--color-background-dark);
+    transition: transform 0.2s ease; /* Smooth animation */
+  }
+  
+  .dotPrimary:hover {
+    transform: scale(1.2); /* Hover effect */
+  }
+  
+  .dotCore {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 18px;
+    width: 18px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+  }
+  
+  .info {
+    max-width: 250px;
+  }
+  
   .company {
-    font-size: 1.125rem;
-  }
-
-  .description {
     font-size: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .items {
-    gap: 80px;
-  }
-
-  .company {
-    font-size: 1.25rem;
-  }
-}
-.items::-webkit-scrollbar {
-    height: 8px; /* Scrollbar height for horizontal scroll */
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: color 0.2s ease;
   }
   
-  .items::-webkit-scrollbar-thumb {
-    background: var(--color-primary); /* Thumb color */
-    border-radius: 4px; /* Rounded corners */
+  .company:hover {
+    color: var(--color-primary-light); /* Hover effect */
   }
   
-  .items::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-light); /* Hover effect */
+  .description {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
   }
   
-  .items::-webkit-scrollbar-track {
-    background: var(--color-background-dark); /* Track color */
+  @media (min-width: 768px) {
+    .items {
+      gap: 64px;
+    }
+  
+    .company {
+      font-size: 1.125rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+    }
   }
   
+  @media (min-width: 1024px) {
+    .items {
+      gap: 80px;
+    }
+  
+    .company {
+      font-size: 1.25rem;
+    }
+  }

@@ -117,7 +117,7 @@ const Awards: React.FC = () => {
             <div className={styles.info}>
               <h4 className={styles.company}>Recognized for inclusion of my biography </h4>
               <p className={styles.description}>
-                ⦿ &nbsp; &nbsp; 8.	Recognized for inclusion of my biography in the 2012 edition of Marquis’ Who’s Who in the World, a globally distributed publication continues to be recognized internationally as the premier biographical data source of notable living individuals from every significant field of endeavor. <br></br>
+                ⦿ &nbsp; &nbsp; Recognized for inclusion of my biography in the 2012 edition of Marquis’ Who’s Who in the World, a globally distributed publication continues to be recognized internationally as the premier biographical data source of notable living individuals from every significant field of endeavor. <br></br>
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ const Awards: React.FC = () => {
             <div className={styles.info}>
               <h4 className={styles.company}>Life Time Achievement award and Gold Medal</h4>
               <p className={styles.description}>
-                ⦿ &nbsp; &nbsp; 10.	Recipient of “Life Time Achievement award and Gold Medal” for the outstanding achievement in the field of Education from Indian solidarity Council, New Delhi, for the year 2010. <br></br>
+                ⦿ &nbsp; &nbsp; Recipient of “Life Time Achievement award and Gold Medal” for the outstanding achievement in the field of Education from Indian solidarity Council, New Delhi, for the year 2010. <br></br>
               </p>
             </div>
           </div>
