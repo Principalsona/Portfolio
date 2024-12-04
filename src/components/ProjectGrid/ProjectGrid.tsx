@@ -29,7 +29,7 @@ const ProjectGrid: React.FC<React.PropsWithChildren<IProps>> = ({
                 />
               </a>
               <h3>{project.name}</h3>
-              <p>{project.description}</p>
+              <p className="description">{project.description}</p>
               
             </div>
           );

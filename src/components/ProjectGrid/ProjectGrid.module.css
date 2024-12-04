@@ -6,7 +6,9 @@
   z-index: 3;
   margin-top: 2rem; /* Ensure spacing from the top */
 }
-
+.description{
+  font-weight: 400;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -15,6 +17,18 @@
   background-color: transparent;
   border-radius: 8px;
 }
+.gridItem{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--color-background-light);
+
+  font-weight: 400;
+  padding: 32px;
+  height: 450px;
+  border-radius: 8px;
+}
+
 
 .projectThumbnail {
   position: relative;
