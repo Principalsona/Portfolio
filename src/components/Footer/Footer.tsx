@@ -12,23 +12,11 @@ const Footer = ({ ...delegated }) => {
         forks: null,
     });
 
-    useEffect(() => {
-        fetch('https://api.github.com/repos/Shikhar97/Shikhar97.github.io')
-            .then(response => response.json())
-            .then(json => {
-                const { stargazers_count, forks_count } = json;
-                setGitHubInfo({
-                    stars: stargazers_count,
-                    forks: forks_count,
-                });
-            })
-            .catch(e => console.error(e));
-    }, []);
 
     return (
         <div className={styles.footer}>
             <a className={styles.styledgithublink}
-                href="https://github.com/"
+                href="https://github.com/TEAM-DOTTEL"
                 target="_blank"
                 rel="nofollow noopener noreferrer">
                 <div>

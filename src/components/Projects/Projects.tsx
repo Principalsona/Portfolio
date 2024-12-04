@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:5001/projects"); // Adjust the URL if your server runs on a different port
+        const response = await fetch("http://localhost:5545/projects"); // Adjust the URL if your server runs on a different port
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }

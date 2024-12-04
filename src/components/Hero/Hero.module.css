@@ -1,7 +1,7 @@
 .hero {
   align-self: center;
   max-width: min-content;
-  min-height: calc(100vh - 150px);
+  
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -13,11 +13,14 @@
 
 .name {
   white-space: nowrap;
-  /* font-size: calc(35 / 16 * 1rem); */
+  font-size: calc(35 / 22 * 1rem);
   margin-bottom: -16px;
 }
 
 @media (min-width: 768px) {
+  .hero{
+    min-height: calc(100vh - 150px);
+  }
   .name {
     font-size: calc(32 / 16 * 1rem);
     margin-bottom: -32px;
