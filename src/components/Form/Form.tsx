@@ -6,13 +6,10 @@ import styles from "./FormPage.module.css";
 
 const FormPage: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    techs: "",
+    title: "",
     description: "",
-    github: "",
-    website: "",
+    author: "",
     imgSrc: "",
-    type: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,21 +25,14 @@ const FormPage: React.FC = () => {
     setIsSubmitting(true);
     setErrorMessage("");
 
-    // Process techs into an array
-    const techsArray = formData.techs.split(",").map((tech) => tech.trim());
-    const dataToSend = { ...formData, techs: techsArray };
-
     try {
-      const response = await axios.post("http://localhost:5545/projects", dataToSend); // Change to your deployed backend URL if necessary
-      alert("Project added successfully!");
+      const response = await axios.post("http://localhost:5545/projects", formData); // Replace with your correct URL
+      alert("Blog post added successfully!");
       setFormData({
-        name: "",
-        techs: "",
+        title: "",
         description: "",
-        github: "",
-        website: "",
+        author: "",
         imgSrc: "",
-        type: "",
       });
     } catch (error) {
       setErrorMessage("Failed to submit the form. Please try again.");
@@ -54,25 +44,15 @@ const FormPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Submit Your Project</h1>
+      <h1 className={styles.title}>Submit Your Blog Post</h1> {/* Use the 'title' class here */}
       {errorMessage && <p className={styles.error}>{errorMessage}</p>}
       <form onSubmit={handleSubmit} className={styles.form}>
         <label>
-          Name:
+          Title:
           <input
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Technologies (comma-separated):
-          <input
-            type="text"
-            name="techs"
-            value={formData.techs}
+            name="title"
+            value={formData.title}
             onChange={handleChange}
             required
           />
@@ -87,22 +67,13 @@ const FormPage: React.FC = () => {
           />
         </label>
         <label>
-          GitHub URL:
+          Author:
           <input
-            type="url"
-            name="github"
-            value={formData.github}
+            type="text"
+            name="author"
+            value={formData.author}
             onChange={handleChange}
             required
-          />
-        </label>
-        <label>
-          Website URL:
-          <input
-            type="url"
-            name="website"
-            value={formData.website}
-            onChange={handleChange}
           />
         </label>
         <label>
@@ -112,15 +83,7 @@ const FormPage: React.FC = () => {
             name="imgSrc"
             value={formData.imgSrc}
             onChange={handleChange}
-          />
-        </label>
-        <label>
-          Type:
-          <input
-            type="text"
-            name="type"
-            value={formData.type}
-            onChange={handleChange}
+            required
           />
         </label>
         <button type="submit" disabled={isSubmitting}>

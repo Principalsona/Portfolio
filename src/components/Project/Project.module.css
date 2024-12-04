@@ -68,7 +68,6 @@
 }
 
 .name {
-  margin-bottom: 16px;
   font-size: calc(21 / 16 * 1rem);
 }
 
@@ -157,7 +156,6 @@
   .info {
     width: 500px;
     margin-top: auto;
-    margin-bottom: auto;
   }
 
   .info.right {

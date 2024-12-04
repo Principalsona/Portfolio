@@ -1,0 +1,66 @@
+[
+    {
+      "_id": "1",
+      "title": "Building a Scalable Web App with React and Node.js",
+      "description": "In this blog post, we walk through the process of building a scalable web app using React on the frontend and Node.js on the backend. Learn about state management, REST APIs, and more!",
+      "author": "John Doe",
+      "imgSrc": "/images/blogs/react-nodejs.png"
+    },
+    {
+      "_id": "2",
+      "title": "Introduction to Machine Learning with Python",
+      "description": "This blog post covers the basics of machine learning, including data preprocessing, model training, and evaluation techniques using Python and popular libraries.",
+      "author": "Jane Smith",
+      "imgSrc": "/images/blogs/ml-python.png"
+    },
+    {
+      "_id": "3",
+      "title": "How to Deploy Your App on AWS",
+      "description": "Learn how to deploy a simple application to AWS using EC2, S3, and other services. This guide walks you through each step for a smooth deployment process.",
+      "author": "Alice Johnson",
+      "imgSrc": "/images/blogs/aws-deployment.png"
+    },
+    {
+      "_id": "4",
+      "title": "An Introduction to Cloud Computing",
+      "description": "Cloud computing is transforming the way businesses operate. In this blog, we explore cloud services, including IaaS, PaaS, and SaaS, and their use cases.",
+      "author": "Bob Brown",
+      "imgSrc": "/images/blogs/cloud-computing.png"
+    },
+    {
+      "_id": "5",
+      "title": "The Power of Serverless Architecture",
+      "description": "Serverless architecture simplifies backend development. Learn how to build and deploy serverless applications using AWS Lambda and other serverless technologies.",
+      "author": "Charlie Davis",
+      "imgSrc": "/images/blogs/serverless.png"
+    },
+    {
+      "_id": "6",
+      "title": "Understanding Docker and Containers",
+      "description": "Docker has revolutionized application deployment. In this blog post, we explain the basics of Docker and containers and how to use them for your projects.",
+      "author": "David Lee",
+      "imgSrc": "/images/blogs/docker-containers.png"
+    },
+    {
+      "_id": "7",
+      "title": "Web Scraping with Python and BeautifulSoup",
+      "description": "Web scraping allows you to collect data from websites. In this blog post, we demonstrate how to use Python and BeautifulSoup to scrape and parse HTML content.",
+      "author": "Emily White",
+      "imgSrc": "/images/blogs/web-scraping.png"
+    },
+    {
+      "_id": "8",
+      "title": "Creating RESTful APIs with Express and MongoDB",
+      "description": "Building a RESTful API is simple with Express and MongoDB. This blog post teaches you how to create and deploy a REST API for a web application.",
+      "author": "Frank Harris",
+      "imgSrc": "/images/blogs/rest-api.png"
+    },
+    {
+      "_id": "9",
+      "title": "Mastering Git and GitHub for Version Control",
+      "description": "Git is the most popular version control system. This blog post teaches you how to use Git and GitHub for managing your projects and collaborating with others.",
+      "author": "Grace Turner",
+      "imgSrc": "/images/blogs/git-github.png"
+    }
+  ]
+  
