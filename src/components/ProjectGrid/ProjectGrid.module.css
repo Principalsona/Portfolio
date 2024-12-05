@@ -6,6 +6,9 @@
   z-index: 3;
   margin-top: 2rem; /* Ensure spacing from the top */
 }
+h3.title{
+  color: var(--color-primary);
+}
 .description{
   font-weight: 400;
 }
