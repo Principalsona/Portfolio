@@ -22,27 +22,16 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Blog Schema and Model
-const blogSchema = new mongoose.Schema({
+
+// Project Schema and Model (Existing)
+const projectSchema = new mongoose.Schema({
   title: String,
   description: String,
   author: String,
   imgSrc: String,
 });
 
-const Blog = mongoose.model("Blog", blogSchema);
-
-// Project Schema and Model (Existing)
-const projectSchema = new mongoose.Schema({
-  name: String,
-  techs: [String],
-  description: String,
-  github: String,
-  website: String,
-  imgSrc: String,
-  type: String,
-});
-
-const Project = mongoose.model("Project", projectSchema);
+const Project = mongoose.model("Projects", projectSchema);
 
 // Routes
 
@@ -69,29 +58,5 @@ app.get("/projects", async (req, res) => {
   }
 });
 
-// POST route to add a new blog post
-app.post("/projects", async (req, res) => {
-  try {
-    const blog = new Blog(req.body);
-    await blog.save();
-    res.status(201).json({ message: "Blog post added successfully!" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to save blog post data" });
-  }
-});
-
-// GET route to fetch all blog posts
-app.get("/projects", async (req, res) => {
-  try {
-    const blogs = await Blog.find();
-    res.status(200).json(blogs);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to fetch blog posts" });
-  }
-});
-
-// Start the server
 const PORT = process.env.PORT || 5545;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
