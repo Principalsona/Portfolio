@@ -3,6 +3,7 @@
   flex-direction: column;
   position: relative;
   margin: auto;
+  
   z-index: 3;
   margin-top: 2rem; /* Ensure spacing from the top */
 }
@@ -19,13 +20,14 @@ h3.title{
   gap: 16px;
   background-color: transparent;
   border-radius: 8px;
+  
 }
 .gridItem{
   display: flex;
   flex-direction: column;
   gap: 16px;
   background-color: var(--color-background-light);
-
+width: 100%;
   font-weight: 400;
   padding: 32px;
   height: 450px;
@@ -45,6 +47,7 @@ h3.title{
 }
 
 .projectThumbnail:hover {
+  
   cursor: pointer;
   transition: transform 0.1s ease-out;
   transform: translateY(-8px) scale(1.02);

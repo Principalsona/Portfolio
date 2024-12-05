@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB connection
-const MONGO_URI = process.env.MONGO_URI ;
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose
   .connect(MONGO_URI, {
@@ -23,12 +23,13 @@ mongoose
 
 // Blog Schema and Model
 
-// Project Schema and Model (Existing)
+// Project Schema and Model with createdAt field
 const projectSchema = new mongoose.Schema({
   title: String,
   description: String,
   author: String,
   imgSrc: String,
+  createdAt: { type: Date, default: Date.now }, // Add createdAt field
 });
 
 const Project = mongoose.model("Projects", projectSchema);
@@ -47,16 +48,16 @@ app.post("/projects", async (req, res) => {
   }
 });
 
-// GET route to fetch all projects
+// GET route to fetch all projects, sorted by createdAt (newest first)
 app.get("/projects", async (req, res) => {
   try {
-    const projects = await Project.find();
+    const projects = await Project.find().sort({ createdAt: -1 }); // Sort by createdAt descending
     res.status(200).json(projects);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to fetch projects" });
   }
 });
-
+  
 const PORT = process.env.PORT || 5545;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
