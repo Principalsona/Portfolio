@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
         const initialVisibleCount = window.innerWidth > 768 ? 6 : 3;
         setVisibleProjects(data.slice(0, initialVisibleCount)); // Show initial projects based on screen sizeconsole.log('Projects component mounte
       } catch (err) {
-        setError(err.message);
+        console.log(err);
       } finally {
         setLoading(false);
       }
