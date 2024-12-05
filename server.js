@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB connection
-const MONGO_URI = process.env.MONGO_URI || "your-mongodb-connection-string";
+const MONGO_URI = process.env.MONGO_URI ;
 
 mongoose
   .connect(MONGO_URI, {
