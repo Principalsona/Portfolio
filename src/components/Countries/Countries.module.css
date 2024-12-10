@@ -10,5 +10,41 @@
     height: 1200; /* Maintain aspect ratio */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow effect */
   }
+  .circular-image {
+    border-radius: 50%; /* Make the image circular */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s; /* Smooth scaling effect */
+  }
   
+  .circular-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .popup-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px; /* Optional: round the corners of the popup image */
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
   
