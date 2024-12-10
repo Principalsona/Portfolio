@@ -1,0 +1,14 @@
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .map {
+    width: 1200; /* Reduce the map size to 60% of the container */
+    height: 1200; /* Maintain aspect ratio */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow effect */
+  }
+  
+  

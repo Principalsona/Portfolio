@@ -15,6 +15,7 @@ import Socials from "@/components/Socials";
 import Splash from "@/components/Splash";
 import Form from "@/components/Form";
 import Awards from "@/components/Awards";
+import Countries from "../Countries";
 import Technical from "@/components/Technical";
 import styles from "./Home.module.css";
 
@@ -48,6 +49,7 @@ const App = ({ initialTheme }: { initialTheme: string }) => {
         {!showForm && <Experiences />}
         {!showForm && <Projects />}
         {!showForm && <Technical />}
+        {!showForm && <Countries />}
         {!showForm && <Awards />}
         {!showForm && <Education />}
         {!showForm && <Contact />}
