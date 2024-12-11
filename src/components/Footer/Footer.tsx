@@ -1,34 +1,61 @@
-"use client"
+"use client";
 import styles from "./Footer.module.css";
-import React, {useEffect, useState} from "react";
-import FormattedIcon from "../Icons/formattedIcon";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
 
-type props = React.ComponentProps<"footer">;
+const Footer: React.FC = () => {
+  const [isPopupOpen, setPopupOpen] = useState(false); // State to manage the popup visibility
 
-const Footer = ({ ...delegated }) => {
-    const [githubInfo, setGitHubInfo] = useState({
-        stars: null,
-        forks: null,
-    });
+  // Function to toggle the popup
+  const togglePopup = () => {
+    setPopupOpen(!isPopupOpen);
+  };
 
+  return (
+    <div className={styles.footer}>
+      <div className={styles.credit}>
+        <span onClick={togglePopup} className={styles.creditText}>
+          Designed &amp; Built by&nbsp;:{" "}&nbsp;
+          <a  target="_blank" rel="noopener noreferrer" className={styles.link}>
+            KISHORE KUMAR
+          </a>
+          &nbsp;&&nbsp;
+          <a  target="_blank" rel="noopener noreferrer" className={styles.link}>
+            JANAGAN
+          </a>
+        </span>
+      </div>
 
-    return (
-        <div className={styles.footer}>
-            <a className={styles.styledgithublink}
-                href="https://github.com/TEAM-DOTTEL"
-                target="_blank"
-                rel="nofollow noopener noreferrer">
-                <div>
-                    Designed &amp; Built by <strong>Kishore Kumar and Janagan</strong>
-                </div>
-            </a>
+      {/* Popup Modal */}
+      {isPopupOpen && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <img
+              src="images/developer.jpeg" // Replace with the developer image URL
+              alt="Developer"
+              className={styles.popupImage}
+            />
+            <h3>
+              <a className={styles.dev}>Developers :{" "}</a>
+              <a href="https://github.com/kixszh" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                KISHORE KUMAR 
+              </a>
+              &nbsp;&&nbsp;
+              <a href="https://github.com/Janagan00709" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                JANAGAN
+              </a>
+            </h3>
+            <p>
+              Kishore & Janagan are passionate full-stack developers who love building
+              impactful web applications and solving complex problems.
+            </p>
+            <button className={styles.closeButton} onClick={togglePopup}>
+              Close
+            </button>
+          </div>
         </div>
-    );
-};
-
-Footer.propTypes = {
-    githubInfo: PropTypes.object,
+      )}
+    </div>
+  );
 };
 
 export default Footer;
