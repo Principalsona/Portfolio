@@ -28,7 +28,7 @@ const Experiences: React.FC = () => {
               <h4 className={styles.company}>Sona College of Technology</h4>
               <h4 className={styles.role}>Principal</h4>
               <p className={styles.description}>
-                ⦿ &nbsp; &nbsp; Leading academic and administrative operations, ensuring the institution's growth and development in technology education.<br />
+                ⦿ &nbsp; &nbsp; Leading academic and administrative operations, ensuring the institutions growth and development in technology education.<br />
                 ⦿ &nbsp; &nbsp; Driving collaborations with industry leaders to align education with emerging technologies.
               </p>
             </div>

@@ -81,13 +81,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font style for title */
   }
   
-  .popupContent p {
-    color: var(--color-text-regular);
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif; /* Font style for description */
-  }
   
   .closeButton {
     color: var(--color-primary);

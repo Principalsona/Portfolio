@@ -13,7 +13,7 @@ const Navigation = () => {
         <p className={styles.navText}>Experience</p>
         Experience
       </Link>
-      <Link className={styles.navLink} href="#Blogs">
+      <Link className={styles.navLink} href="#projects">
         <p className={styles.navText}>Blogs</p>
         Blogs
       </Link>

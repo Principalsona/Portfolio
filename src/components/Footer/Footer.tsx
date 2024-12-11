@@ -1,6 +1,8 @@
 "use client";
 import styles from "./Footer.module.css";
 import React, { useState } from "react";
+import Image from "next/image";
+
 
 const Footer: React.FC = () => {
   const [isPopupOpen, setPopupOpen] = useState(false); // State to manage the popup visibility
@@ -29,9 +31,11 @@ const Footer: React.FC = () => {
       {isPopupOpen && (
         <div className={styles.popup}>
           <div className={styles.popupContent}>
-            <img
+            <Image
               src="images/developer.jpeg" // Replace with the developer image URL
               alt="Developer"
+              width={500}
+              height={500}
               className={styles.popupImage}
             />
             <h3>

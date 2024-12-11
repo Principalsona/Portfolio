@@ -17,7 +17,7 @@ export interface IProps {
 
 const Project: React.FC<IProps> = ({ blog, side, ...delegated }) => {
   return (
-    <div className={clsx(styles.project, styles[side])} {...delegated}>
+    <div id="Blogs" className={clsx(styles.project, styles[side])} {...delegated}>
       <div className={styles.stretch}>
         <a href="/">
           <Image
