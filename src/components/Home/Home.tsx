@@ -10,7 +10,7 @@ import Experiences from "@/components/Experiences";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
+import Blogs from "@/components/Projects";
 import Socials from "@/components/Socials";
 import Splash from "@/components/Splash";
 import Form from "@/components/Form";
@@ -46,7 +46,7 @@ const App = ({ initialTheme }: { initialTheme: string }) => {
         )}
         {!showForm && <About />}
         {!showForm && <Experiences />}
-        {!showForm && <Projects />}
+        {!showForm && <Blogs />}
         {!showForm && <Technical />}
         {!showForm && <Awards />}
         {!showForm && <Education />}

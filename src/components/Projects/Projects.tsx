@@ -6,41 +6,51 @@ import { ConstrainedTitle } from "@/components/SectionTitle";
 import { IProject } from "@/components/Project";
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<IProject[]>([]);
-  const [visibleProjects, setVisibleProjects] = useState<IProject[]>([]);
+  const [projectsByType, setProjectsByType] = useState<Record<string, IProject[]>>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [activeType, setActiveType] = useState<string>("type1");
+  const [visibleProjects, setVisibleProjects] = useState<number>(6); // Default number of projects to show
+  const [viewMoreVisible, setViewMoreVisible] = useState<boolean>(false); // Control visibility of View More button
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchProjectsByType = async () => {
       try {
         const response = await fetch("http://localhost:5545/projects");
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }
         const data = await response.json();
-        setProjects(data);
-        const initialVisibleCount = window.innerWidth > 768 ? 6 : 3;
-        setVisibleProjects(data.slice(0, initialVisibleCount)); // Show initial projects based on screen sizeconsole.log('Projects component mounte
+
+        // Group projects by type
+        const groupedProjects: Record<string, IProject[]> = data.reduce(
+          (acc: Record<string, IProject[]>, project: IProject) => {
+            acc[project.type] = acc[project.type] || [];
+            acc[project.type].push(project);
+            return acc;
+          },
+          {}
+        );
+
+        setProjectsByType(groupedProjects);
+        setViewMoreVisible(groupedProjects[activeType]?.length > visibleProjects); // Check if the "View More" button is needed
       } catch (err) {
-        console.log(err);
+        setError("Error fetching projects.");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProjects();
-  }, []);
+    fetchProjectsByType();
+  }, [activeType, visibleProjects]);
 
   const handleViewMore = () => {
-    setVisibleProjects(projects.slice(0, visibleProjects.length + 6)); // Load more 6 projects at a time
-    setIsExpanded(true); // Set expanded state to true when "View More" is clicked
+    setVisibleProjects((prevVisible) => prevVisible + 6); // Show 6 more projects
   };
 
-  const handleViewLess = () => {
-    setVisibleProjects(projects.slice(0, 6)); // Reset to the first 6 projects
-    setIsExpanded(false); // Set expanded state to false when "View Less" is clicked
+  const handleTypeChange = (type: string) => {
+    setActiveType(type);
+    setVisibleProjects(6); // Reset the number of visible projects when switching types
   };
 
   if (loading) {
@@ -54,19 +64,38 @@ const Projects: React.FC = () => {
   return (
     <div className={styles.projects} id="projects">
       <MaxWidthWrapper>
-        <ConstrainedTitle side="left">Blogs</ConstrainedTitle>
-        <div className={styles.projectList}>
-          <ProjectGrid projects={visibleProjects} />
+        <ConstrainedTitle side="left">Projects</ConstrainedTitle>
+        <div className={styles.typeButtons}>
+          <button
+            onClick={() => handleTypeChange("type1")}
+            className={activeType === "type1" ? styles.activeButton : ""}
+          >
+            Type 1
+          </button>
+          <button
+            onClick={() => handleTypeChange("type2")}
+            className={activeType === "type2" ? styles.activeButton : ""}
+          >
+            Type 2
+          </button>
+          <button
+            onClick={() => handleTypeChange("type3")}
+            className={activeType === "type3" ? styles.activeButton : ""}
+          >
+            Type 3
+          </button>
         </div>
-        <div className={styles.buttonContainer}>
-          {visibleProjects.length < projects.length && !isExpanded && (
-            <button onClick={handleViewMore} className={styles.viewMoreButton}>
+
+        <div className={styles.projectList}>
+          <ProjectGrid
+            projects={projectsByType[activeType]?.slice(0, visibleProjects) || []}
+          />
+          {viewMoreVisible && (
+            <button
+              className={styles.viewMoreButton}
+              onClick={handleViewMore}
+            >
               View More
-            </button>
-          )}
-          {isExpanded && (
-            <button onClick={handleViewLess} className={styles.viewLessButton}>
-              View Less
             </button>
           )}
         </div>

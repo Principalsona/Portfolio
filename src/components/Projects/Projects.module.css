@@ -54,4 +54,28 @@
   cursor: not-allowed;
 }
 
+.typeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
 
+.typeButtons button {
+  padding: 12px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.typeButtons button:hover {
+  background-color: var(--color-primary-light);
+}
+
+.typeButtons button.activeButton {
+  background-color: var(--color-primary-dark);
+}

@@ -12,6 +12,7 @@ const FormPage: React.FC = () => {
     description: "",
     author: "",
     imgSrc: "",
+    type: "type1", // Default type
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,19 +40,24 @@ const FormPage: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleTypeSelect = (type: string) => {
+    setFormData({ ...formData, type });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMessage("");
 
     try {
-      const response = await axios.post("http://localhost:5545/projects", formData); // Replace with your correct URL
-      alert("Blog post added successfully!");
+      await axios.post("http://localhost:5545/projects", formData); // Replace with your correct URL
+      alert("Project added successfully!");
       setFormData({
         title: "",
         description: "",
         author: "",
         imgSrc: "",
+        type: "type1", // Reset to default type
       });
     } catch (error) {
       setErrorMessage("Failed to submit the form. Please try again.");
@@ -63,41 +69,59 @@ const FormPage: React.FC = () => {
 
   if (!isLoggedIn) {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        // backgroundColor: '#CBDCEB'
-      }}>
-        <div style={{
-          maxWidth: '400px',
-          width: '100%',
-          padding: '2rem',
-          backgroundColor: '#608BC1',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          borderRadius: '8px'
-        }}>
-          <h1 style={{
-            fontSize: '2rem',
-            textAlign: 'center',
-            color: '#133E87',
-            marginBottom: '1rem'
-          }}>Login</h1>
-          {errorMessage && <p style={{
-            color: 'rgb(255, 77, 79)',
-            textAlign: 'center',
-            marginBottom: '1rem'
-          }}>{errorMessage}</p>}
-          <form onSubmit={handleLoginSubmit} style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem'
-          }}>
-            <label style={{
-              fontSize: '1rem',
-              color: '#133E87'
-            }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "400px",
+            width: "100%",
+            padding: "2rem",
+            backgroundColor: "#608BC1",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            borderRadius: "8px",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "2rem",
+              textAlign: "center",
+              color: "#133E87",
+              marginBottom: "1rem",
+            }}
+          >
+            Login
+          </h1>
+          {errorMessage && (
+            <p
+              style={{
+                color: "rgb(255, 77, 79)",
+                textAlign: "center",
+                marginBottom: "1rem",
+              }}
+            >
+              {errorMessage}
+            </p>
+          )}
+          <form
+            onSubmit={handleLoginSubmit}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+            }}
+          >
+            <label
+              style={{
+                fontSize: "1rem",
+                color: "#133E87",
+              }}
+            >
               Username:
               <input
                 type="text"
@@ -106,20 +130,22 @@ const FormPage: React.FC = () => {
                 onChange={handleLoginChange}
                 required
                 style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: '1px solid #608BC1',
-                  borderRadius: '4px',
-                  fontSize: '1rem',
-                  color: '#133E87',
-                  backgroundColor: '#fff'
+                  width: "100%",
+                  padding: "0.75rem",
+                  border: "1px solid #608BC1",
+                  borderRadius: "4px",
+                  fontSize: "1rem",
+                  color: "#133E87",
+                  backgroundColor: "#fff",
                 }}
               />
             </label>
-            <label style={{
-              fontSize: '1rem',
-              color: '#133E87'
-            }}>
+            <label
+              style={{
+                fontSize: "1rem",
+                color: "#133E87",
+              }}
+            >
               Password:
               <input
                 type="password"
@@ -128,26 +154,29 @@ const FormPage: React.FC = () => {
                 onChange={handleLoginChange}
                 required
                 style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: '1px solid #608BC1',
-                  borderRadius: '4px',
-                  fontSize: '1rem',
-                  color: '#133E87',
-                  backgroundColor: '#fff'
+                  width: "100%",
+                  padding: "0.75rem",
+                  border: "1px solid #608BC1",
+                  borderRadius: "4px",
+                  fontSize: "1rem",
+                  color: "#133E87",
+                  backgroundColor: "#fff",
                 }}
               />
             </label>
-            <button type="submit" style={{
-              padding: '0.75rem',
-              backgroundColor: '#133E87',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '4px',
-              fontSize: '1rem',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s ease'
-            }}>
+            <button
+              type="submit"
+              style={{
+                padding: "0.75rem",
+                backgroundColor: "#133E87",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+              }}
+            >
               Login
             </button>
           </form>
@@ -157,41 +186,59 @@ const FormPage: React.FC = () => {
   }
 
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      // backgroundColor: '#CBDCEB'
-    }}>
-      <div style={{
-        maxWidth: '600px',
-        width: '100%',
-        padding: '2rem',
-        backgroundColor: '#608BC1',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-        borderRadius: '8px'
-      }}>
-        <h1 style={{
-          fontSize: '2rem',
-          textAlign: 'center',
-          color: '#133E87',
-          marginBottom: '1rem'
-        }}>Submit Your Blog Post</h1>
-        {errorMessage && <p style={{
-          color: '#ff4d4f',
-          textAlign: 'center',
-          marginBottom: '1rem'
-        }}>{errorMessage}</p>}
-        <form onSubmit={handleSubmit} style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
-        }}>
-          <label style={{
-            fontSize: '1rem',
-            color: '#133E87'
-          }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "600px",
+          width: "100%",
+          padding: "2rem",
+          backgroundColor: "#608BC1",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          borderRadius: "8px",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "2rem",
+            textAlign: "center",
+            color: "#133E87",
+            marginBottom: "1rem",
+          }}
+        >
+          Submit Your Project
+        </h1>
+        {errorMessage && (
+          <p
+            style={{
+              color: "#ff4d4f",
+              textAlign: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            {errorMessage}
+          </p>
+        )}
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <label
+            style={{
+              fontSize: "1rem",
+              color: "#133E87",
+            }}
+          >
             Title:
             <input
               type="text"
@@ -200,20 +247,22 @@ const FormPage: React.FC = () => {
               onChange={handleChange}
               required
               style={{
-                width: '100%',
-                padding: '0.75rem',
-                border: '1px solid #608BC1',
-                borderRadius: '4px',
-                fontSize: '1rem',
-                color: '#133E87',
-                backgroundColor: '#fff'
+                width: "100%",
+                padding: "0.75rem",
+                border: "1px solid #608BC1",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                color: "#133E87",
+                backgroundColor: "#fff",
               }}
             />
           </label>
-          <label style={{
-            fontSize: '1rem',
-            color: '#133E87'
-          }}>
+          <label
+            style={{
+              fontSize: "1rem",
+              color: "#133E87",
+            }}
+          >
             Description:
             <input
               type="text"
@@ -222,20 +271,22 @@ const FormPage: React.FC = () => {
               onChange={handleChange}
               required
               style={{
-                width: '100%',
-                padding: '0.75rem',
-                border: '1px solid #608BC1',
-                borderRadius: '4px',
-                fontSize: '1rem',
-                color: '#133E87',
-                backgroundColor: '#fff'
+                width: "100%",
+                padding: "0.75rem",
+                border: "1px solid #608BC1",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                color: "#133E87",
+                backgroundColor: "#fff",
               }}
             />
           </label>
-          <label style={{
-            fontSize: '1rem',
-            color: '#133E87'
-          }}>
+          <label
+            style={{
+              fontSize: "1rem",
+              color: "#133E87",
+            }}
+          >
             Author:
             <input
               type="text"
@@ -244,20 +295,22 @@ const FormPage: React.FC = () => {
               onChange={handleChange}
               required
               style={{
-                width: '100%',
-                padding: '0.75rem',
-                border: '1px solid #608BC1',
-                borderRadius: '4px',
-                fontSize: '1rem',
-                color: '#133E87',
-                backgroundColor: '#fff'
+                width: "100%",
+                padding: "0.75rem",
+                border: "1px solid #608BC1",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                color: "#133E87",
+                backgroundColor: "#fff",
               }}
             />
           </label>
-          <label style={{
-            fontSize: '1rem',
-            color: '#133E87'
-          }}>
+          <label
+            style={{
+              fontSize: "1rem",
+              color: "#133E87",
+            }}
+          >
             Image URL:
             <input
               type="url"
@@ -266,26 +319,83 @@ const FormPage: React.FC = () => {
               onChange={handleChange}
               required
               style={{
-                width: '100%',
-                padding: '0.75rem',
-                border: '1px solid #608BC1',
-                borderRadius: '4px',
-                fontSize: '1rem',
-                color: '#133E87',
-                backgroundColor: '#fff'
+                width: "100%",
+                padding: "0.75rem",
+                border: "1px solid #608BC1",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                color: "#133E87",
+                backgroundColor: "#fff",
               }}
             />
           </label>
-          <button type="submit" disabled={isSubmitting} style={{
-            padding: '0.75rem',
-            backgroundColor: isSubmitting ? '#CBDCEB' : '#133E87',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '4px',
-            fontSize: '1rem',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease'
-          }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "1rem",
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => handleTypeSelect("type1")}
+              style={{
+                padding: "0.5rem",
+                backgroundColor: formData.type === "type1" ? "#133E87" : "#CBDCEB",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              Type 1
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTypeSelect("type2")}
+              style={{
+                padding: "0.5rem",
+                backgroundColor: formData.type === "type2" ? "#133E87" : "#CBDCEB",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              Type 2
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTypeSelect("type3")}
+              style={{
+                padding: "0.5rem",
+                backgroundColor: formData.type === "type3" ? "#133E87" : "#CBDCEB",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              Type 3
+            </button>
+          </div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            style={{
+              padding: "0.75rem",
+              backgroundColor: isSubmitting ? "#CBDCEB" : "#133E87",
+              color: "#fff",
+              border: "none",
+              borderRadius: "4px",
+              fontSize: "1rem",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+            }}
+          >
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>

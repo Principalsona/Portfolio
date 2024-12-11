@@ -6,33 +6,25 @@ export interface IProps {
   projects: IProject[];
 }
 
-const ProjectGrid: React.FC<React.PropsWithChildren<IProps>> = ({
-  projects,
-  children,
-  ...delegated
-}) => {
+const ProjectGrid: React.FC<IProps> = ({ projects }) => {
   return (
-    <div className={styles.projectGrid} id="other-projects">
-      <div className={styles.grid} {...delegated}>
-        {projects.map((project, idx) => {
-          return (
-            <div key={idx} className={styles.gridItem}>
-              <a href={project.website}>
-                <Image
-                  className={styles.projectThumbnail}
-                  height={300}
-                  width={300}
-                  src={project.imgSrc}
-                  alt={project.name}
-                />
-              </a>
-              <h3 className="title" style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>
-                {project.title}
-              </h3>
-              <p className="description">{project.description}</p>
-            </div>
-          );
-        })}
+    <div className={styles.projectGrid}>
+      <div className={styles.grid}>
+        {projects.map((project, idx) => (
+          <div key={idx} className={styles.gridItem}>
+            <a href={project.website}>
+              <Image
+                className={styles.projectThumbnail}
+                height={300}
+                width={300}
+                src={project.imgSrc}
+                alt={project.name}
+              />
+            </a>
+            <h3 className="title">{project.title}</h3>
+            <p className="description">{project.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
