@@ -36,11 +36,11 @@ const Footer: React.FC = () => {
             />
             <h3>
               <a className={styles.dev}>Developers :{" "}</a>
-              <a href="https://github.com/kixszh" target="_blank" rel="noopener noreferrer" className={styles.link}>
+              <a href="https://kixszh.vercel.app" target="_blank" rel="noopener noreferrer" className={styles.link}>
                 KISHORE KUMAR 
               </a>
               &nbsp;&&nbsp;
-              <a href="https://github.com/Janagan00709" target="_blank" rel="noopener noreferrer" className={styles.link}>
+              <a href="https://janagan00709.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" className={styles.link}>
                 JANAGAN
               </a>
             </h3>
