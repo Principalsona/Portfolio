@@ -5,25 +5,25 @@ import Image from "next/image";
 import styles from "./Countries.module.css";
 
 const highlightedCountries = [
-  { id: "SGP", coords: [103.82, 1.352], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg" },
-  { id: "IND", coords: [78.9629, 20.5937], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg" },
-  { id: "NOR", coords: [8.4689, 60.472], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg" },
-  { id: "USA", coords: [-95.7129, 37.0902], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg" },
-  { id: "OMN", coords: [55.9231, 21.4225], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg" },
+  { id: "SGP", coords: [103.82, 1.352], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg", description: "Singapore: A global financial hub with stunning cityscapes and it a place where i born and it has lot of diverse people with lots of knowledge." },
+  { id: "IND", coords: [78.9629, 20.5937], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg", description: "India: A land of diverse cultures and heritage." },
+  { id: "NOR", coords: [8.4689, 60.472], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg", description: "Norway: Known for its stunning fjords and northern lights." },
+  { id: "USA", coords: [-95.7129, 37.0902], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg", description: "USA: The land of opportunities and iconic landmarks." },
+  { id: "OMN", coords: [55.9231, 21.4225], imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg", description: "Oman: A beautiful blend of desert, beaches, and mountains." },
 ];
 
 const MapChart = () => {
   const [popupOpen, setPopupOpen] = useState(false);
-  const [popupImage, setPopupImage] = useState<string>("");
+  const [popupData, setPopupData] = useState<{ imageUrl: string; description: string }>({ imageUrl: "", description: "" });
 
-  const handleMarkerClick = (imageUrl: string) => {
-    setPopupImage(imageUrl);
+  const handleMarkerClick = (imageUrl: string, description: string) => {
+    setPopupData({ imageUrl, description });
     setPopupOpen(true);
   };
 
   const handleClosePopup = () => {
     setPopupOpen(false);
-    setPopupImage("");
+    setPopupData({ imageUrl: "", description: "" });
   };
 
   return (
@@ -58,14 +58,14 @@ const MapChart = () => {
               })
             }
           </Geographies>
-          {highlightedCountries.map(({ id, coords, imageUrl }) => (
+          {highlightedCountries.map(({ id, coords, imageUrl, description }) => (
             <Marker key={id} coordinates={coords as [number, number]}>
               <circle
                 r={10}
                 fill="white"
                 stroke="black"
                 strokeWidth={2}
-                onClick={() => handleMarkerClick(imageUrl)}
+                onClick={() => handleMarkerClick(imageUrl, description)}
                 style={{ cursor: "pointer" }}
               />
             </Marker>
@@ -79,13 +79,14 @@ const MapChart = () => {
                 &times;
               </span>
               <Image
-                src={popupImage}
+                src={popupData.imageUrl}
                 alt="Country Popup"
                 width={400}
                 height={300}
                 className={styles.popupImage}
                 layout="intrinsic"
               />
+              <p className={styles.description}>{popupData.description}</p>
             </div>
           </div>
         )}

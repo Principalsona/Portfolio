@@ -39,12 +39,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
   
   .popupImage {
     border-radius: 8px;
     max-width: 100%;
     max-height: 100%;
+  }
+  
+  .description {
+    margin-top: 15px;
+    font-size: 16px;
+    color: black;
+    text-align: center;
   }
   
   .closeButton {
