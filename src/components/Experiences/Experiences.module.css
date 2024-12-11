@@ -1,6 +1,6 @@
 .role {
   color: var(--color-primary);
-  font-weight: 400;
+  font-weight: 390;
   font-size: calc(14 / 16 * 1rem);
   margin-bottom: 8px;
 }
@@ -92,12 +92,14 @@
 
 .time {
   font-weight: 400;
-  color: var(--color-text-light);
+  color: var(--color-primary);
+  font-weight: 390;
   text-transform: uppercase;
   font-size: calc(12 / 16 * 1rem);
 }
 
 .description {
+  
   font-weight: 400;
   max-width: 650px;
 }
