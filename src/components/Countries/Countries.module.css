@@ -30,7 +30,7 @@
   
   .popupContent {
     position: relative;
-    background: white;
+    background-color: var(--color-background-dark);
     padding: 20px;
     border-radius: 8px;
     max-width: 90%;
@@ -51,7 +51,7 @@
   .description {
     margin-top: 15px;
     font-size: 16px;
-    color: black;
+    color: var(--color-text-light); /* Better readability on dark background */
     text-align: center;
   }
   
@@ -59,7 +59,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
