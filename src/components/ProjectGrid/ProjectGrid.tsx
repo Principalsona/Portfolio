@@ -21,8 +21,8 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
                 alt={project.name}
               />
             </a>
-            <h3 className="title">{project.title}</h3>
-            <p className="description">{project.description}</p>
+            <h3 className={styles.title}>{project.title}</h3>
+            <p className={styles.description}>{project.description}</p>
           </div>
         ))}
       </div>

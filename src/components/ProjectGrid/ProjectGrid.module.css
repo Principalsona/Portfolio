@@ -7,11 +7,13 @@
   margin-top: 2rem; /* Ensure spacing from the top */
 }
 
-h3.title {
+.title {
   color: var(--color-primary);
+  font-weight: bold;
 }
 
 .description {
+  color: var(--color-text-regular);
   font-weight: 400;
 }
 
