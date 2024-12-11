@@ -41,7 +41,7 @@ const College: React.FC<IProps> = ({
           alt={school}
           width={300}
           height={400}
-        />
+         />
         <h4 className={clsx(styles.degree, styles[side])}>{degree}</h4>
         <h4 className={clsx(styles.school, styles[side])}>{school}</h4>
         <ul className={clsx(styles.courses, styles[side])}>

@@ -11,7 +11,6 @@ const Projects: React.FC = () => {
   const [error, setError] = useState<string>("");
   const [activeType, setActiveType] = useState<string>("type1");
   const [visibleProjects, setVisibleProjects] = useState<number>(6); // Default number of projects to show
-  const [viewMoreVisible, setViewMoreVisible] = useState<boolean>(false); // Control visibility of View More button
 
   useEffect(() => {
     const fetchProjectsByType = async () => {
@@ -33,7 +32,6 @@ const Projects: React.FC = () => {
         );
 
         setProjectsByType(groupedProjects);
-        setViewMoreVisible(groupedProjects[activeType]?.length > visibleProjects); // Check if the "View More" button is needed
       } catch (err) {
         setError("Error fetching projects.");
       } finally {
@@ -42,10 +40,14 @@ const Projects: React.FC = () => {
     };
 
     fetchProjectsByType();
-  }, [activeType, visibleProjects]);
+  }, []);
 
   const handleViewMore = () => {
     setVisibleProjects((prevVisible) => prevVisible + 6); // Show 6 more projects
+  };
+
+  const handleViewLess = () => {
+    setVisibleProjects((prevVisible) => Math.max(6, prevVisible - 6)); // Show 6 fewer projects but not less than 6
   };
 
   const handleTypeChange = (type: string) => {
@@ -61,10 +63,19 @@ const Projects: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
+  const projects = projectsByType[activeType] || [];
+  const canShowMore = projects.length > visibleProjects;
+  const canShowLess = visibleProjects > 6;
+
+  const typeTitles: Record<string, string> = {
+    type1: "Type 1 Projects",
+    type2: "Type 2 Projects",
+    type3: "Type 3 Projects",
+  };
+
   return (
     <div className={styles.projects} id="projects">
       <MaxWidthWrapper>
-        <ConstrainedTitle side="left">Projects</ConstrainedTitle>
         <div className={styles.typeButtons}>
           <button
             onClick={() => handleTypeChange("type1")}
@@ -72,12 +83,14 @@ const Projects: React.FC = () => {
           >
             Type 1
           </button>
+          <div className={styles.separator}></div>
           <button
             onClick={() => handleTypeChange("type2")}
             className={activeType === "type2" ? styles.activeButton : ""}
           >
             Type 2
           </button>
+          <div className={styles.separator}></div>
           <button
             onClick={() => handleTypeChange("type3")}
             className={activeType === "type3" ? styles.activeButton : ""}
@@ -85,19 +98,28 @@ const Projects: React.FC = () => {
             Type 3
           </button>
         </div>
+        <ConstrainedTitle side="left">{typeTitles[activeType]}</ConstrainedTitle>
 
         <div className={styles.projectList}>
-          <ProjectGrid
-            projects={projectsByType[activeType]?.slice(0, visibleProjects) || []}
-          />
-          {viewMoreVisible && (
-            <button
-              className={styles.viewMoreButton}
-              onClick={handleViewMore}
-            >
-              View More
-            </button>
-          )}
+          <ProjectGrid projects={projects.slice(0, visibleProjects)} />
+          <div className={styles.buttonContainer}>
+            {canShowMore && (
+              <button
+                className={styles.viewMoreButton}
+                onClick={handleViewMore}
+              >
+                View More
+              </button>
+            )}
+            {canShowLess && (
+              <button
+                className={styles.viewLessButton}
+                onClick={handleViewLess}
+              >
+                View Less
+              </button>
+            )}
+          </div>
         </div>
       </MaxWidthWrapper>
     </div>

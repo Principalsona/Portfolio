@@ -12,9 +12,9 @@ const Hero = () => {
 
   return (
     <div className={styles.hero}>
-      <p className={styles.text}>
+      {/* <p className={styles.text}>
         <Highlight>Hi, my name is</Highlight>
-      </p>
+      </p> */}
       <h2 className={styles.name}>Dr.S.R.R.SENTHILKUMAR. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h2>
         <h3 className={styles.subText}>
             {/* <a href="https://git.io/typing-svg"><img*/}

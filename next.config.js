@@ -4,7 +4,7 @@ const nextConfig = {
         removeConsole:true,
     },
     output: 'export',
-    reactStrictMode: false, //
+    reactStrictMode: false, 
     reactStrictMode: true,
     images: {
         unoptimized: true,

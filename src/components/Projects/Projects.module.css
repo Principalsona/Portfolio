@@ -28,7 +28,7 @@
 .viewMoreButton {
   color: var(--color-primary);
   background-color: transparent;
-  border: 1px solid;
+  border: 1px solid var(--color-primary);
   border-radius: 8px;
   padding: 10px 16px;
   transition: var(--transition);
@@ -36,12 +36,11 @@
   cursor: pointer;
   font-size: 1rem;
   text-align: center;
-  transition: background-color 0.3s ease;
-  display: block; /* Changed to block-level element for centering */
-  width: auto; /* Allow the width to auto-adjust to button content */
-  max-width: 400px; /* Limit the max-width of the button */
+  display: block;
+  width: auto;
+  max-width: 400px;
   margin-left: auto;
-  margin-right: auto; /* Center the button horizontally */
+  margin-right: auto;
 }
 
 .viewMoreButton:hover {
@@ -50,7 +49,7 @@
 }
 
 .viewMoreButton:disabled {
-  background-color: #ccc; /* Disable button when no more content to load */
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
@@ -58,24 +57,51 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 16px 0;
 }
 
 .typeButtons button {
   padding: 12px 20px;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-light);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .typeButtons button:hover {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary);
 }
 
 .typeButtons button.activeButton {
   background-color: var(--color-primary-dark);
+  color: var(--color-primary); /* Updated for better visibility */
+
+}
+
+@media (min-width: 768px) {
+  .typeButtons button {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .projectList > *:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+.separator {
+  height: 22px; /* Vertical line height */
+  width: 1px;
+  background-color: white; 
+  
 }
