@@ -3,6 +3,8 @@ import { ConstrainedTitle } from "@/components/SectionTitle";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import Image from "next/image";
 import styles from "./Countries.module.css";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+
 
 const highlightedCountries = [
   {
@@ -18,7 +20,7 @@ const highlightedCountries = [
     coords: [78.9629, 20.5937],
     imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
     description:
-      "India, officially the Republic of India,[j][20] is a country in South Asia. It is the seventh-largest country in the world by area and the most populous country. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[k] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives.",
+      "India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country in the world by area and the most populous country. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[k] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives.",
   },
   {
     id: "NOR",
@@ -63,7 +65,8 @@ const MapChart = () => {
 
   return (
     <div className={styles.mapContainer}>
-      <ConstrainedTitle side="left">Countries Visited</ConstrainedTitle>
+      <MaxWidthWrapper><ConstrainedTitle style={{marginBottom : 0 }}side="left">Countries Visited</ConstrainedTitle></MaxWidthWrapper>
+      
       <div className={styles.mapWrapper}>
         <ComposableMap>
           <Geographies geography="/feature.json">
