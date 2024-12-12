@@ -21,6 +21,10 @@ const Navigation = () => {
         <p className={styles.navText}>Research Papers</p>
         Research Papers
       </Link>
+      <Link className={styles.navLink} href="#Countries">
+        <p className={styles.navText}>Countries Visited</p>
+        Countries Visited
+      </Link>
       <Link className={styles.navLink} href="#Awards">
         <p className={styles.navText}>Awards</p>
         Awards

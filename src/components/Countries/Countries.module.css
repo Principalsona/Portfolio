@@ -1,3 +1,6 @@
+.heading{
+  background-color: var(--color-background-dark);
+}
 .mapContainer {
     display: flex;
     flex-direction: column;
@@ -11,10 +14,14 @@
     position: relative;
     width: 100%;
     max-width: 850px;
-    height: 500px;
+    height: auto;
     overflow: hidden;
   }
-  
+  @media (min-width: 1024px) {
+    .mapWrapper{
+      height: 555px;
+    }
+  }
   .popup {
     position: fixed;
     top: 0;
@@ -98,5 +105,10 @@
   .closeButton:hover {
     background-color: var(--color-primary);
     color: var(--color-background-light);
+  }
+  @media only screen and (max-width: 600px) {
+    .popupContent {
+      width: 75%;
+    }
   }
   

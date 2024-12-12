@@ -55,9 +55,6 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
       {modalData && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
-            <button className={styles.closeButton} onClick={closeModal}>
-              &times;
-            </button>
             <Image
               className={styles.modalImage}
               height={400}
@@ -67,6 +64,9 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
             />
             <h2 className={styles.modalTitle}>{modalData.title}</h2>
             <p className={styles.modalDescription}>{modalData.description}</p>
+            <button className={styles.closeButton} onClick={closeModal}>
+              Close
+            </button>
           </div>
         </div>
       )}

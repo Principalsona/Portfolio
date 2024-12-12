@@ -64,10 +64,11 @@ const MapChart = () => {
   };
 
   return (
-    <div className={styles.mapContainer}>
-      <MaxWidthWrapper><ConstrainedTitle style={{marginBottom : 0 }}side="left">Countries Visited</ConstrainedTitle></MaxWidthWrapper>
-      
+   
+
+    <div id="Countries" className={styles.mapContainer}>     
       <div className={styles.mapWrapper}>
+      <ConstrainedTitle style={{marginBottom : 0 }}side="left">Countries Visited</ConstrainedTitle> 
         <ComposableMap>
           <Geographies geography="/feature.json">
             {({ geographies }) =>
