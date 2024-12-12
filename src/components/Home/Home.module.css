@@ -1,4 +1,12 @@
+
+/* Home.module.css */
 .grid {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll; /* Enable scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.grid::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
