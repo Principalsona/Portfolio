@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-import { IProject } from "@/components/Project"; // Ensure correct import
 import styles from "./ProjectGrid.module.css";
 import Image from "next/image";
+
+// Define the IProject interface locally
+export interface IProject {
+  title: string;
+  description: string;
+  imgSrc: string;
+  name: string;
+  website: string;
+}
 
 export interface IProps {
   projects: IProject[];
@@ -23,7 +31,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
       <div className={styles.grid}>
         {projects.map((project, idx) => (
           <div key={idx} className={styles.gridItem}>
-            <a href={project.website}>
+            <a href={project.website} target="_blank" rel="noopener noreferrer">
               <Image
                 className={styles.projectThumbnail}
                 height={300}
