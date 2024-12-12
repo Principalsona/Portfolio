@@ -1,6 +1,6 @@
 .experiences {
     background-color: var(--color-background-dark);
-    padding: 32px;
+    padding: 32px 32px;
     display: flex;
     flex-direction: column;
     gap: 32px;

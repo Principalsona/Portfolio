@@ -20,7 +20,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 1080px;
+  max-width: 1120px;
   gap: 16px;
   background-color: transparent;
   border-radius: 8px;
@@ -39,6 +39,7 @@
 }
 
 .projectThumbnail {
+  
   position: relative;
   z-index: 1;
   border-radius: 8px;
@@ -154,6 +155,8 @@
   overflow-y: auto;
   text-align: center;
   position: relative;
+  overflow-y: scroll; /* Enable scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
 .modalImage {
