@@ -12,11 +12,11 @@ const Technical: React.FC = () => {
 
   const Stars = [];
   for (let i = 0; i < activeSkill.level; i++) {
-    Stars.push(<div className={styles.star} key={i} />);
+    Stars.push(<div className={styles.star} key={`filled-${i}`} />);
   }
 
   for (let i = 0; i < 5 - activeSkill.level; i++) {
-    Stars.push(<div className={clsx(styles.star, styles.empty)} key={i} />);
+    Stars.push(<div className={clsx(styles.star, styles.empty)} key={`empty-${i}`} />);
   }
 
   return (
