@@ -349,7 +349,7 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Type 1
+              Blogs
             </button>
             <button
               type="button"
@@ -364,7 +364,7 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Type 2
+              Patent
             </button>
             <button
               type="button"
@@ -379,7 +379,7 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Type 3
+              Investments
             </button>
           </div>
           <button

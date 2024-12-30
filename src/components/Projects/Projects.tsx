@@ -68,9 +68,9 @@ const Projects: React.FC = () => {
   const canShowLess = visibleProjects > 6;
 
   const typeTitles: Record<string, string> = {
-    type1: "Type 1 Projects",
-    type2: "Type 2 Projects",
-    type3: "Type 3 Projects",
+    type1: "Blogs",
+    type2: "Patent",
+    type3: "Investments",
   };
 
   return (
@@ -81,21 +81,21 @@ const Projects: React.FC = () => {
             onClick={() => handleTypeChange("type1")}
             className={activeType === "type1" ? styles.activeButton : ""}
           >
-            Type 1
+            Blogs
           </button>
           <div className={styles.separator}></div>
           <button
             onClick={() => handleTypeChange("type2")}
             className={activeType === "type2" ? styles.activeButton : ""}
           >
-            Type 2
+            Patent
           </button>
           <div className={styles.separator}></div>
           <button
             onClick={() => handleTypeChange("type3")}
             className={activeType === "type3" ? styles.activeButton : ""}
           >
-            Type 3
+            Investments
           </button>
         </div>
         <ConstrainedTitle side="left">{typeTitles[activeType]}</ConstrainedTitle>
