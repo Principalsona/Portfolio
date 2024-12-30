@@ -7,7 +7,7 @@ const Awards: React.FC = () => {
   return (
     <div id="Awards" className={styles.experiences}>
       <MaxWidthWrapper>
-        <ConstrainedTitle side="">Awards</ConstrainedTitle>
+        <ConstrainedTitle side="left">Awards</ConstrainedTitle>
         <div className={styles.items}>
           <div className={styles.timeline}/>
           <div className={styles.item}>

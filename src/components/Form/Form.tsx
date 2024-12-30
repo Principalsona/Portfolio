@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const LOGIN_USERNAME = "sethilkumar";
-const LOGIN_PASSWORD = "7P$df9H!k24";
+const LOGIN_USERNAME = "senthilkumar";
+const LOGIN_PASSWORD = "senthilkumar";
 
 const FormPage: React.FC = () => {
   const [formData, setFormData] = useState({
