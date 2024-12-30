@@ -3,14 +3,13 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProjectGrid from "@/components/ProjectGrid";
 import styles from "./Projects.module.css";
 import { ConstrainedTitle } from "@/components/SectionTitle";
-import { IProject } from "@/components/Project";
+import type { IProject } from "@/components/Project";
 
 const Projects: React.FC = () => {
   const [projectsByType, setProjectsByType] = useState<Record<string, IProject[]>>({});
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
   const [activeType, setActiveType] = useState<string>("type1");
-  const [visibleProjects, setVisibleProjects] = useState<number>(6); // Default number of projects to show
+  const [visibleProjects, setVisibleProjects] = useState<number>(6);
 
   useEffect(() => {
     const fetchProjectsByType = async () => {
@@ -19,9 +18,8 @@ const Projects: React.FC = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }
-        const data = await response.json();
+        const data: IProject[] = await response.json();
 
-        // Group projects by type
         const groupedProjects: Record<string, IProject[]> = data.reduce(
           (acc: Record<string, IProject[]>, project: IProject) => {
             acc[project.type] = acc[project.type] || [];
@@ -33,7 +31,7 @@ const Projects: React.FC = () => {
 
         setProjectsByType(groupedProjects);
       } catch (err) {
-        setError("Error fetching projects.");
+        console.error(err);
       } finally {
         setLoading(false);
       }
@@ -42,25 +40,15 @@ const Projects: React.FC = () => {
     fetchProjectsByType();
   }, []);
 
-  const handleViewMore = () => {
-    setVisibleProjects((prevVisible) => prevVisible + 6); // Show 6 more projects
-  };
-
-  const handleViewLess = () => {
-    setVisibleProjects((prevVisible) => Math.max(6, prevVisible - 6)); // Show 6 fewer projects but not less than 6
-  };
-
+  const handleViewMore = () => setVisibleProjects((prev) => prev + 6);
+  const handleViewLess = () => setVisibleProjects((prev) => Math.max(6, prev - 6));
   const handleTypeChange = (type: string) => {
     setActiveType(type);
-    setVisibleProjects(6); // Reset the number of visible projects when switching types
+    setVisibleProjects(6);
   };
 
   if (loading) {
     return <div>Loading projects...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
   }
 
   const projects = projectsByType[activeType] || [];
@@ -77,48 +65,24 @@ const Projects: React.FC = () => {
     <div className={styles.projects} id="projects">
       <MaxWidthWrapper>
         <div className={styles.typeButtons}>
-          <button
-            onClick={() => handleTypeChange("type1")}
-            className={activeType === "type1" ? styles.activeButton : ""}
-          >
-            Blogs
-          </button>
-          <div className={styles.separator}></div>
-          <button
-            onClick={() => handleTypeChange("type2")}
-            className={activeType === "type2" ? styles.activeButton : ""}
-          >
-            Patent
-          </button>
-          <div className={styles.separator}></div>
-          <button
-            onClick={() => handleTypeChange("type3")}
-            className={activeType === "type3" ? styles.activeButton : ""}
-          >
-            Investments
-          </button>
+          {Object.keys(typeTitles).map((type) => (
+            <React.Fragment key={type}>
+              <button
+                onClick={() => handleTypeChange(type)}
+                className={activeType === type ? styles.activeButton : ""}
+              >
+                {typeTitles[type]}
+              </button>
+              <div className={styles.separator}></div>
+            </React.Fragment>
+          ))}
         </div>
         <ConstrainedTitle side="left">{typeTitles[activeType]}</ConstrainedTitle>
-
         <div className={styles.projectList}>
           <ProjectGrid projects={projects.slice(0, visibleProjects)} />
           <div className={styles.buttonContainer}>
-            {canShowMore && (
-              <button
-                className={styles.viewMoreButton}
-                onClick={handleViewMore}
-              >
-                View More
-              </button>
-            )}
-            {canShowLess && (
-              <button
-                className={styles.viewLessButton}
-                onClick={handleViewLess}
-              >
-                View Less
-              </button>
-            )}
+            {canShowMore && <button className={styles.viewMoreButton} onClick={handleViewMore}>View More</button>}
+            {canShowLess && <button className={styles.viewLessButton} onClick={handleViewLess}>View Less</button>}
           </div>
         </div>
       </MaxWidthWrapper>

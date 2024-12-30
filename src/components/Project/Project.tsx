@@ -10,20 +10,26 @@ export interface IBlog {
   imgSrc: string;
 }
 
+export interface IProject extends IBlog {
+  type: any;
+  name: string;
+  website: string;
+}
+
 export interface IProps {
-  blog: IBlog;
+  project: IProject;
   side: "left" | "right";
 }
 
-const Project: React.FC<IProps> = ({ blog, side, ...delegated }) => {
+const Project: React.FC<IProps> = ({ project, side, ...delegated }) => {
   return (
-    <div id="Blogs" className={clsx(styles.project, styles[side])} {...delegated}>
+    <div id="Projects" className={clsx(styles.project, styles[side])} {...delegated}>
       <div className={styles.stretch}>
-        <a href="/">
+        <a href={project.website}>
           <Image
             className={styles.tiltingImage}
-            src={blog.imgSrc}
-            alt={blog.title}
+            src={project.imgSrc}
+            alt={project.title}
             width={400}
             height={200}
           />
@@ -32,20 +38,20 @@ const Project: React.FC<IProps> = ({ blog, side, ...delegated }) => {
           width={100}
           height={100}
           className={styles.staticImage}
-          src={blog.imgSrc}
-          alt={blog.title}
+          src={project.imgSrc}
+          alt={project.title}
         />
       </div>
 
       <div className={clsx(styles.info, styles[side])}>
-        <h4 className={clsx(styles.name, styles[side])}>{blog.title}</h4>
+        <h4 className={clsx(styles.name, styles[side])}>{project.name}</h4>
         <h4 className={clsx(styles.description, styles[side])}>
-          {blog.description}
+          {project.description}
         </h4>
-        <p className={clsx(styles.author, styles[side])}>By {blog.author}</p>
+        <p className={clsx(styles.author, styles[side])}>By {project.author}</p>
         <ul className={clsx(styles.links, styles[side])}>
-          <IconLink href="/" target="_blank">
-            <span>Read More</span>
+          <IconLink href={project.website} target="_blank">
+            <span>Visit</span>
           </IconLink>
         </ul>
       </div>
