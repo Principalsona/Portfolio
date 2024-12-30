@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const fetchProjectsByType = async () => {
       try {
-        const response = await fetch("http://localhost:5545/projects");
+        const response = await fetch("https://server-9apq.onrender.com/projects");//http://localhost:5545/projects
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }
