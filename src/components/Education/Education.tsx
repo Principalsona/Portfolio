@@ -15,7 +15,7 @@ const COLLEGES = [
       "Research Methodologies in Civil Engineering"
     ],
     "year": "Year of Completion: 2004",
-    "imgSrc": "/Education/PSG.png"
+    "imgSrc": "../education/PSG.png"
   },
   {
     "degree": "MASTER OF CIVIL ENGINEERING",
@@ -28,7 +28,7 @@ const COLLEGES = [
       "Construction Project Management"
     ],
     "year": "Year of Completion: 1993",
-    "imgSrc": "/Education/psg1.jpg"
+    "imgSrc": "../education/psg1.jpg"
   },
   {
     "degree": "BACHELOR OF CIVIL ENGINEERING",
@@ -41,7 +41,7 @@ const COLLEGES = [
       "Design of Steel Structures"
     ],
     "year": "Year of Completion: 1990",
-    "imgSrc": "/Education/gct.jpg"
+    "imgSrc": "../education/gct.jpg"
   },
   {
     "degree": "DIPLOMA IN CIVIL ENGINEERING",
@@ -54,7 +54,7 @@ const COLLEGES = [
       "Estimating and Costing"
     ],
     "year": "Year of Completion: 1984",
-    "imgSrc": "/Education/VLBJ.jpg"
+    "imgSrc": "../education/VLBJ.jpg"
   }
   
 ];
