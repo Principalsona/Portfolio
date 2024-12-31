@@ -5,44 +5,56 @@ import Image from "next/image";
 import styles from "./Countries.module.css";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
-
 const highlightedCountries = [
   {
     id: "SGP",
     name: "Singapore",
     coords: [103.82, 1.352],
     imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
-    description: "Singapore: A global financial hub with stunning cityscapes and a place where I was born. It has a lot of diverse people with rich knowledge, and the country is none other than Singapore.",
+    description: "\n- National University of Singapore, August 2004.\n- Nanyang University of Singapore, August 2004."
   },
   {
     id: "IND",
     name: "India",
     coords: [78.9629, 20.5937],
     imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
-    description:
-      "India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country in the world by area and the most populous country. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[k] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives.",
+    description: "\n- Recipient of 'Best ISTE Chapter Chairman' Award for the year 2017 by Tamilnadu Section, Indian Society for Technical Education, New Delhi."
   },
   {
-    id: "NOR",
-    name: "Norway",
-    coords: [8.4689, 60.472],
+    id: "THA",
+    name: "Thailand",
+    coords: [100.5018, 13.7563],
     imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
-    description: "Norway: Known for its stunning fjords and northern lights.",
+    description: "\n- Phetchburi Rajabhat University and Thammasat University, February 2014."
   },
   {
-    id: "USA",
-    name: "United States",
-    coords: [-95.7129, 37.0902],
+    id: "KOR",
+    name: "South Korea",
+    coords: [127.7666, 35.9077],
     imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
-    description: "USA: The land of opportunities and iconic landmarks.",
+    description: "\n- Kori Nuclear Power Plant, July 7, 2014.\n- Hanyang University, July 2014.\n- Dong Pusan Engineering College, July 2014.\n- UNHUWA Stem Cell Research Centre, July 2014.\n- Malawi University of Business and Applied Sciences, Siantou University, Santo Tomas College of Agriculture, and National University of Lesotho, July 2023."
+  },
+  {
+    id: "UAE",
+    name: "United Arab Emirates",
+    coords: [54.3773, 24.4539],
+    imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
+    description: "\n- University of Sharjah, December 2006.\n- American University and Big 5 International Construction Fair, December 2007."
   },
   {
     id: "OMN",
     name: "Oman",
     coords: [55.9231, 21.4225],
     imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
-    description: "Oman: A beautiful blend of desert, beaches, and mountains.",
+    description: "\n- Acting Head of Civil & Architectural Engineering Section, HCT, 2005 – 2008.\n- Sultan Qaboos University for Research discussions and Library Visits, 2006 – 2008."
   },
+  {
+    id: "GBR",
+    name: "United Kingdom",
+    coords: [-3.435973, 55.378051],
+    imageUrl: "https://i.ibb.co/j3CB6xW/Whats-App-Image-2024-12-05-at-21-30-52-d79d9b3c.jpg",
+    description: "\n- University of Oxford, University of Strathclyde Glasgow, Nottingham Trent University, University of Manchester, University of Liverpool, and University of Cambridge, October 2022."
+  }
 ];
 
 const MapChart = () => {
@@ -64,11 +76,11 @@ const MapChart = () => {
   };
 
   return (
-   
-
-    <div id="Countries" className={styles.mapContainer}>     
+    <div id="Countries" className={styles.mapContainer}>
       <div className={styles.mapWrapper}>
-      <ConstrainedTitle style={{marginBottom : 0 }}side="left">Countries Visited</ConstrainedTitle> 
+        <ConstrainedTitle style={{ marginBottom: 0 }} side="left">
+          Countries Visited
+        </ConstrainedTitle>
         <ComposableMap>
           <Geographies geography="/feature.json">
             {({ geographies }) =>
