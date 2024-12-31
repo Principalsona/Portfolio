@@ -74,7 +74,7 @@ const About = ({ ...delegated }: Props) => {
             <picture className={styles.picture}>
                 <source media={MIN_WIDTH.desktop} srcSet={aboutUrl} />
                 <source media={MIN_WIDTH.tablet} srcSet={aboutUrlSmall} />
-                <img src={aboutUrl} alt="About Me" />
+                <img style={{borderRadius:'10px'}} src={aboutUrl} alt="About Me" />
             </picture>
         </div>
     );
