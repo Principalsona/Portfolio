@@ -5,6 +5,8 @@ import styles from "./Projects.module.css";
 import { ConstrainedTitle } from "@/components/SectionTitle";
 import type { IProject } from "@/components/Project";
 
+const API_URL = process.env.NEXT_PUBLIC_PROJECTS_API;
+
 const Projects: React.FC = () => {
   const [projectsByType, setProjectsByType] = useState<Record<string, IProject[]>>({});
   const [loading, setLoading] = useState<boolean>(true);
@@ -14,7 +16,11 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const fetchProjectsByType = async () => {
       try {
-        const response = await fetch("https://server-9apq.onrender.com/projects");//http://localhost:5545/projects
+        if (!API_URL) {
+          throw new Error("API URL is not defined");
+        }
+
+        const response = await fetch(API_URL);
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }
@@ -65,24 +71,32 @@ const Projects: React.FC = () => {
     <div className={styles.projects} id="projects">
       <MaxWidthWrapper>
         <div className={styles.typeButtons}>
-        {Object.keys(typeTitles).map((type, index, array) => (
-    <React.Fragment key={type}>
-      <button
-        onClick={() => handleTypeChange(type)}
-        className={activeType === type ? styles.activeButton : ""}
-      >
-        {typeTitles[type]}
-      </button>
-      {index < array.length - 1 && <div className={styles.separator}></div>}
-    </React.Fragment>
-  ))}
+          {Object.keys(typeTitles).map((type, index, array) => (
+            <React.Fragment key={type}>
+              <button
+                onClick={() => handleTypeChange(type)}
+                className={activeType === type ? styles.activeButton : ""}
+              >
+                {typeTitles[type]}
+              </button>
+              {index < array.length - 1 && <div className={styles.separator}></div>}
+            </React.Fragment>
+          ))}
         </div>
         <ConstrainedTitle side="left">{typeTitles[activeType]}</ConstrainedTitle>
         <div className={styles.projectList}>
           <ProjectGrid projects={projects.slice(0, visibleProjects)} />
           <div className={styles.buttonContainer}>
-            {canShowMore && <button className={styles.viewMoreButton} onClick={handleViewMore}>View More</button>}
-            {canShowLess && <button className={styles.viewLessButton} onClick={handleViewLess}>View Less</button>}
+            {canShowMore && (
+              <button className={styles.viewMoreButton} onClick={handleViewMore}>
+                View More
+              </button>
+            )}
+            {canShowLess && (
+              <button className={styles.viewLessButton} onClick={handleViewLess}>
+                View Less
+              </button>
+            )}
           </div>
         </div>
       </MaxWidthWrapper>
