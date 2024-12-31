@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const LOGIN_USERNAME = "senthilkumar";
-const LOGIN_PASSWORD = "senthilkumar";
+// Load environment variables
+const LOGIN_USERNAME = process.env.NEXT_PUBLIC_LOGIN_USERNAME || ""; 
+const LOGIN_PASSWORD = process.env.NEXT_PUBLIC_LOGIN_PASSWORD || ""; 
+const PROJECTS_API = process.env.NEXT_PUBLIC_PROJECTS_API || "";
 
 const FormPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +52,7 @@ const FormPage: React.FC = () => {
     setErrorMessage("");
 
     try {
-      await axios.post("http://localhost:5545/projects", formData); // Replace with your correct URL
+      await axios.post(PROJECTS_API, formData);
       alert("Project added successfully!");
       setFormData({
         title: "",
