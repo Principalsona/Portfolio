@@ -65,17 +65,17 @@ const Projects: React.FC = () => {
     <div className={styles.projects} id="projects">
       <MaxWidthWrapper>
         <div className={styles.typeButtons}>
-          {Object.keys(typeTitles).map((type) => (
-            <React.Fragment key={type}>
-              <button
-                onClick={() => handleTypeChange(type)}
-                className={activeType === type ? styles.activeButton : ""}
-              >
-                {typeTitles[type]}
-              </button>
-              <div className={styles.separator}></div>
-            </React.Fragment>
-          ))}
+        {Object.keys(typeTitles).map((type, index, array) => (
+    <React.Fragment key={type}>
+      <button
+        onClick={() => handleTypeChange(type)}
+        className={activeType === type ? styles.activeButton : ""}
+      >
+        {typeTitles[type]}
+      </button>
+      {index < array.length - 1 && <div className={styles.separator}></div>}
+    </React.Fragment>
+  ))}
         </div>
         <ConstrainedTitle side="left">{typeTitles[activeType]}</ConstrainedTitle>
         <div className={styles.projectList}>
