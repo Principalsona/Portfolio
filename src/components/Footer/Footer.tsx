@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     <div className={styles.footer}>
       <div className={styles.credit}>
         <span onClick={togglePopup} className={styles.creditText}>
-          Designed &amp; Built by&nbsp;:{" "}&nbsp;
+        🔗 Designed &amp; Built by&nbsp;:{" "}&nbsp;
           <a  target="_blank" rel="noopener noreferrer" className={styles.link}>
             KISHORE KUMAR
           </a>
@@ -41,11 +41,11 @@ const Footer: React.FC = () => {
             <h3>
               <a className={styles.dev}>Developers :{" "}</a>
               <a href="https://kixszh.vercel.app" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                KISHORE KUMAR 
+                KISHORE KUMAR 🔗
               </a>
               &nbsp;&&nbsp;
               <a href="https://janagan00709.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                JANAGAN
+                JANAGAN 🔗
               </a>
             </h3>
             <p>
