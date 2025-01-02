@@ -2,6 +2,7 @@
   display: grid;
   padding: 32px;
   padding-bottom: 0px;
+  margin-bottom: 12px;
   row-gap: 40px; /* Reduced row gap for uniform spacing */
   grid-template-areas:
     "aboutme"
@@ -32,6 +33,7 @@
 .download {
   align-self: start;
   margin-top: 32px;
+  
 }
 
 @media (min-width: 768px) {
