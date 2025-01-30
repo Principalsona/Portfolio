@@ -68,7 +68,7 @@ const About = ({ ...delegated }: Props) => {
                     </ul>
                 </div>
                 <Button className={styles.download} onClick={downloadResume}>
-                    Download Resume
+                    View Resume
                 </Button>
             </div>
             <picture className={styles.picture}>
