@@ -18,7 +18,7 @@ const awardsData = [
   {
     title: "Innovative Educator Award",
     description: "Honored with the 'Innovative Educator Award' for outstanding contributions to technology-driven education.",
-    image: "/images/award3.jpg",
+    image: "https://sonatechac-my.sharepoint.com/:i:/r/personal/ashrafunisha_sonatech_ac_in/Documents/Attachments/Outstanding%20Leader%20in%20Higher%20Education%20Award%202022.jpg?csf=1&web=1&e=aadUhi"
   },
   {
     title: "Excellence in Research",

@@ -383,6 +383,51 @@ const FormPage: React.FC = () => {
             >
               Investments
             </button>
+            <button
+              type="button"
+              onClick={() => handleTypeSelect("type4")}
+              style={{
+                padding: "0.5rem",
+                backgroundColor: formData.type === "type4" ? "#133E87" : "#CBDCEB",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              type4
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTypeSelect("type5")}
+              style={{
+                padding: "0.5rem",
+                backgroundColor: formData.type === "type5" ? "#133E87" : "#CBDCEB",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              type5
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTypeSelect("type6")}
+              style={{
+                padding: "0.5rem",
+                backgroundColor: formData.type === "type6" ? "#133E87" : "#CBDCEB",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              type6
+            </button>
           </div>
           <button
             type="submit"

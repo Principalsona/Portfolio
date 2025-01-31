@@ -65,6 +65,9 @@ const Projects: React.FC = () => {
     type1: "Blogs",
     type2: "Patent",
     type3: "Investments",
+    type4: "Research",
+    type5: "Projects",
+    type6: "Publications",
   };
 
   return (
