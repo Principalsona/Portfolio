@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 // Load environment variables
-const LOGIN_USERNAME = process.env.NEXT_PUBLIC_LOGIN_USERNAME || ""; 
-const LOGIN_PASSWORD = process.env.NEXT_PUBLIC_LOGIN_PASSWORD || ""; 
+const LOGIN_USERNAME = process.env.NEXT_PUBLIC_LOGIN_USERNAME || "";
+const LOGIN_PASSWORD = process.env.NEXT_PUBLIC_LOGIN_PASSWORD|| "";
 const PROJECTS_API = process.env.NEXT_PUBLIC_PROJECTS_API || "";
 
 const FormPage: React.FC = () => {
@@ -331,6 +331,15 @@ const FormPage: React.FC = () => {
               }}
             />
           </label>
+          <label
+            style={{
+              fontSize: "1rem",
+              color: "#133E87",
+            }}
+          >
+            Categories :
+            
+          
           <div
             style={{
               display: "flex",
@@ -343,7 +352,7 @@ const FormPage: React.FC = () => {
               onClick={() => handleTypeSelect("type1")}
               style={{
                 padding: "0.5rem",
-                backgroundColor: formData.type === "type1" ? "#133E87" : "#CBDCEB",
+                backgroundColor: formData.type === "type1" ? "#133E87" : "",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
@@ -358,7 +367,7 @@ const FormPage: React.FC = () => {
               onClick={() => handleTypeSelect("type2")}
               style={{
                 padding: "0.5rem",
-                backgroundColor: formData.type === "type2" ? "#133E87" : "#CBDCEB",
+                backgroundColor: formData.type === "type2" ? "#133E87" : "",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
@@ -373,7 +382,7 @@ const FormPage: React.FC = () => {
               onClick={() => handleTypeSelect("type3")}
               style={{
                 padding: "0.5rem",
-                backgroundColor: formData.type === "type3" ? "#133E87" : "#CBDCEB",
+                backgroundColor: formData.type === "type3" ? "#133E87" : "",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
@@ -381,14 +390,14 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Investments
+              Funding
             </button>
             <button
               type="button"
               onClick={() => handleTypeSelect("type4")}
               style={{
                 padding: "0.5rem",
-                backgroundColor: formData.type === "type4" ? "#133E87" : "#CBDCEB",
+                backgroundColor: formData.type === "type4" ? "#133E87" : "",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
@@ -396,14 +405,14 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              type4
+              Committees
             </button>
             <button
               type="button"
               onClick={() => handleTypeSelect("type5")}
               style={{
                 padding: "0.5rem",
-                backgroundColor: formData.type === "type5" ? "#133E87" : "#CBDCEB",
+                backgroundColor: formData.type === "type5" ? "#133E87" : "",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
@@ -411,14 +420,14 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              type5
+              Affiliations
             </button>
             <button
               type="button"
               onClick={() => handleTypeSelect("type6")}
               style={{
                 padding: "0.5rem",
-                backgroundColor: formData.type === "type6" ? "#133E87" : "#CBDCEB",
+                backgroundColor: formData.type === "type6" ? "#133E87" : "",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
@@ -426,15 +435,16 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              type6
+              Talks
             </button>
           </div>
+          </label>
           <button
             type="submit"
             disabled={isSubmitting}
             style={{
               padding: "0.75rem",
-              backgroundColor: isSubmitting ? "#CBDCEB" : "#133E87",
+              backgroundColor: isSubmitting ? "" : "#133E87",
               color: "#fff",
               border: "none",
               borderRadius: "4px",

@@ -64,10 +64,10 @@ const Projects: React.FC = () => {
   const typeTitles: Record<string, string> = {
     type1: "Blogs",
     type2: "Patent",
-    type3: "Investments",
-    type4: "Research",
-    type5: "Projects",
-    type6: "Publications",
+    type3: "Funding",
+    type4: "Committees",
+    type5: "Affiliations",
+    type6: "Talks",
   };
 
   return (
