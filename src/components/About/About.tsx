@@ -11,8 +11,9 @@ interface Props {
 
 const About = ({ ...delegated }: Props) => {
     const downloadResume = () => {
-        window.open("/resume", "_blank");
+        window.open("/Dr_SSR.pdf", "_blank");
     };
+    
 
     const { aboutUrl, aboutUrlSmall } = useTheme();
 
