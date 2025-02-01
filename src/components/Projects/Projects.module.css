@@ -55,10 +55,13 @@
 
 .typeButtons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 16px;
+  overflow-x: auto;
 }
+
 
 .separator {
   height: 1px;
@@ -67,6 +70,9 @@
 }
 
 .typeButtons button {
+  min-width: 100px;
+  flex: 1;
+  text-align: center;
   padding: 12px 20px;
   background-color: var(--color-primary-light);
   color: white;
@@ -94,10 +100,11 @@
 }
 
 @media (max-width: 767px) {
-  .projectList > *:nth-child(n + 4) {
-    display: none;
+  .projectList > * {
+    display: block;
   }
 }
+
 
 .separator {
   height: 22px; /* Vertical line height */
