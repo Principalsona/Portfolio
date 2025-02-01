@@ -8,7 +8,7 @@ const awardsData = [
   {
     title: "Outstanding Leader in Higher Education",
     description: "Recipient of 'Outstanding Leader in Higher Education' Award for the year 2022 by 14th elets Higher Education Summit, Chennai.",
-    image: "https://sonatechac-my.sharepoint.com/:i:/r/personal/ashrafunisha_sonatech_ac_in/Documents/Attachments/Outstanding%20Leader%20in%20Higher%20Education%20Award%202022.jpg?csf=1&web=1&e=aadUhi",
+    image: "https://photos.app.goo.gl/CS3KjsDB6daibxmG9",
   },
   {
     title: "Digital Leaders",
@@ -66,29 +66,29 @@ const Awards: React.FC = () => {
   const [selectedAward, setSelectedAward] = useState<{ title: string; description: string; image: string } | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+  // useEffect(() => {
+  //   const scrollContainer = scrollRef.current;
+  //   if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    const scrollSpeed = 2; // Adjust scroll speed for smoother scrolling
+  //   let scrollAmount = 0;
+  //   const scrollSpeed = 2; // Adjust scroll speed for smoother scrolling
 
-    const scroll = () => {
-      if (scrollContainer) {
-        // Calculate the maximum scrollable width
-        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+  //   const scroll = () => {
+  //     if (scrollContainer) {
+  //       // Calculate the maximum scrollable width
+  //       const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-        if (scrollContainer.scrollLeft >= maxScroll) {
-          scrollContainer.scrollLeft = 0; // Reset to the start
-        } else {
-          scrollContainer.scrollLeft += scrollSpeed;
-        }
-      }
-    };
+  //       if (scrollContainer.scrollLeft >= maxScroll) {
+  //         scrollContainer.scrollLeft = 0; // Reset to the start
+  //       } else {
+  //         scrollContainer.scrollLeft += scrollSpeed;
+  //       }
+  //     }
+  //   };
 
-    const interval = setInterval(scroll, 20); // Adjust interval for smoother scrolling
-    return () => clearInterval(interval);
-  }, []);
+  //   const interval = setInterval(scroll, 20); // Adjust interval for smoother scrolling
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div id="Awards" className={styles.experiences}>
