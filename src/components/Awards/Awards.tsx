@@ -41,7 +41,7 @@ const awardsData = [
     image: "../awards/Research Excellence Award from Indus Foundation, USA.jpg",
   },
   {
-    title: "",
+    title: "Marquis Who's Who in the World Recognition",
     description: "Recognized for inclusion of my biography in the 2012 edition of Marquis’ Who’s Who in the World, a globally distributed publication continues to be recognized internationally as the premier biographical data source of notable living individuals from every significant field of endeavor.",
     image: "../awards/",
   },
