@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
   };
 
   if (loading) {
-    return <div>Loading projects...</div>;
+    return <div>Loading Blogs...</div>;
   }
 
   const projects = projectsByType[activeType] || [];
