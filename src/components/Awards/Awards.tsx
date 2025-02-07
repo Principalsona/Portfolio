@@ -17,7 +17,7 @@ const awardsData = [
   },
   {
     title: "ISTE Best Engineering College Principal",
-    description: "Recipient of “ISTE Best Engineering College Principal” Award for the year 2018 by 48th Indian Society for Technical Education, Belagavi (Karnataka).",
+    description: "Recipient of “ISTE Best Engineering College Principal” Award for the year 2018 by 48th Indian Society for Technical Education, Karnataka.",
     image: "../awards/ISTE Best Student Chapter Award received by our Principal Dr. S. R. R. Senthilkumar.jpg"
   },
   {
@@ -41,18 +41,18 @@ const awardsData = [
     image: "../awards/Research Excellence Award from Indus Foundation, USA.jpg",
   },
   {
-    title: "Marquis Who's Who in the World Recognition",
-    description: "Recognized for inclusion of my biography in the 2012 edition of Marquis’ Who’s Who in the World, a globally distributed publication continues to be recognized internationally as the premier biographical data source of notable living individuals from every significant field of endeavor.",
+    title: "Marquis Who's Who",
+    description: "Recognized for inclusion in the 2012 edition of Marquis' Who's Who in the World, a leading global biographical publication of notable individuals across various fields.",
     image: "../awards/",
   },
   {
     title: "Rashtriya Vidya Saraswati Puraskar",
-    description: "Recipient of “Rashtriya Vidya Saraswati Puraskar” award for the outstanding achievement in the field of Education from International Institute of Education and Management, New Delhi, for the year 2010.",
+    description: "Recipient of “Rashtriya Vidya Saraswati Puraskar” award for the outstanding achievement in the field of Education from IIE and Management, New Delhi.",
     image: "../awards/Receiving Rashtriya Vidhya Award from GVG Krishnamurhty, Election Commissioner of India.jpg",
   },
   {
-    title: "Life Time Achievement award and Gold Medal",
-    description: "Recipient of “Life Time Achievement award and Gold Medal” for the outstanding achievement in the field of Education from Indian solidarity Council, New Delhi, for the year 2010.",
+    title: "Life Time Achievement award",
+    description: "Recipient of “Life Time Achievement award and Gold Medal” for the outstanding achievement in the field of Education from Indian solidarity Council, New Delhi.",
     image: "../awards/",
   },
   {
