@@ -390,7 +390,7 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Funding
+              Grants Received
             </button>
             <button
               type="button"
