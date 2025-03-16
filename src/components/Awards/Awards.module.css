@@ -146,8 +146,8 @@
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
-    width: 500px;
-    height: 300px;
+    width: 550px;
+    height: 425px;
     white-space: normal;
     display: flex;
     flex-direction: column;
@@ -208,7 +208,9 @@
     overflow: hidden;
     font-family: 'Arial', sans-serif; /* Better font for readability */
   }
-  
+  .cardImage {
+    margin-bottom: 10px; /* Adjust this value as needed */
+  }
   .popupImage {
     width: 99%;
     height: auto;
@@ -256,3 +258,46 @@
     }
   }
   
+.scrollContainer {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  display: flex;
+  width: 100%;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+.items {
+  display: flex;
+  gap: 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navButton {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: #0056b3;
+}
+

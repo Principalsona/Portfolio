@@ -65,28 +65,48 @@ const awardsData = [
 const Awards: React.FC = () => {
   const [selectedAward, setSelectedAward] = useState<{ title: string; description: string; image: string } | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [popupOpen, setPopupOpen] = useState(false);
+    const [popupData, setPopupData] = useState<{ imageUrl: string; description: string; name: string }>({
+      imageUrl: "",
+      description: "",
+      name: "",
+    });
+  
+    const handleMarkerClick = (name: string, imageUrl: string, description: string) => {
+      setPopupData({ name, imageUrl, description });
+      setPopupOpen(true);
+    };
+  
+    const handleClosePopup = () => {
+      setPopupOpen(false);
+      setPopupData({ name: "", imageUrl: "", description: "" });
+    };
 
+  // // Function to scroll left
+  // const scrollLeft = () => {
+  //   if (scrollRef.current) {
+  //     scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  //   }
+  // };
+
+  // // Function to scroll right
+  // const scrollRight = () => {
+  //   if (scrollRef.current) {
+  //     scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  //   }
+  // };
+
+  // // Auto-scroll logic with alternating direction
   // useEffect(() => {
-  //   const scrollContainer = scrollRef.current;
-  //   if (!scrollContainer) return;
-
-  //   let scrollAmount = 0;
-  //   const scrollSpeed = 2; // Adjust scroll speed for smoother scrolling
-
-  //   const scroll = () => {
-  //     if (scrollContainer) {
-  //       // Calculate the maximum scrollable width
-  //       const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-  //       if (scrollContainer.scrollLeft >= maxScroll) {
-  //         scrollContainer.scrollLeft = 0; // Reset to the start
+  //   const interval = setInterval(() => {
+  //     if (scrollRef.current) {
+  //       if (scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= scrollRef.current.scrollWidth) {
+  //         scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
   //       } else {
-  //         scrollContainer.scrollLeft += scrollSpeed;
+  //         scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
   //       }
   //     }
-  //   };
-
-  //   const interval = setInterval(scroll, 20); // Adjust interval for smoother scrolling
+  //   }, 3000);
   //   return () => clearInterval(interval);
   // }, []);
 
@@ -94,22 +114,36 @@ const Awards: React.FC = () => {
     <div id="Awards" className={styles.experiences}>
       <MaxWidthWrapper>
         <ConstrainedTitle side="left">Awards</ConstrainedTitle>
-        <div className={styles.scrollContainer} ref={scrollRef}>
-          <div className={styles.items}>
-            {awardsData.map((award, index) => (
-              <div key={index} className={styles.card} onClick={() => setSelectedAward(award)}>
-                <h4 className={styles.company}>{award.title}</h4>
-                <p className={styles.description}>{award.description}</p>
-                <button className={styles.viewButton}>View Award</button>
-              </div>
-            ))}
+        <div className={styles.controls}>
+          {/* Left Scroll Button */}
+          {/* <button className={styles.navButton} onClick={scrollLeft}>
+            ❮
+          </button> */}
+          
+          {/* Scrollable Container */}
+          <div className={styles.scrollContainer} ref={scrollRef}>
+            <div className={styles.items}>
+              {awardsData.map((award, index) => (
+                <div key={index} className={styles.card} onClick={() => setSelectedAward(award)}>
+                  <Image src={award.image} alt={award.title} width={100} height={100} className={styles.cardImage} />                  <h4 className={styles.company}>{award.title}</h4>
+                  <p className={styles.description}>{award.description}</p>
+                  <button className={styles.viewButton} onClick={() => setSelectedAward(award)}>View Award</button>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* Right Scroll Button */}
+          {/* <button className={styles.navButton} onClick={scrollRight}>
+            ❯
+          </button> */}
         </div>
       </MaxWidthWrapper>
 
+      {/* Award Popup */}
       {selectedAward && (
-        <div className={styles.popup}>
-          <div className={styles.popupContent}>
+        <div className={styles.popup} onClick={handleClosePopup}>
+          <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
             <div className={styles.popupScroll}>
               <Image src={selectedAward.image} alt={selectedAward.title} width={500} height={300} className={styles.popupImage} />
               <h3>{selectedAward.title}</h3>
