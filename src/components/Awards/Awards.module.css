@@ -1,303 +1,183 @@
 .experiences {
-    background-color: var(--color-background-dark);
-    padding: 32px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-  
-  .items {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 48px;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    padding: 16px 0;
-    box-sizing: border-box; /* Ensures padding is included in the element's total width */
-    width: 100%; /* Ensures it takes full width of the parent */
-    max-width: 90vw; /* Prevents it from overflowing the viewport */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: var(--color-primary) var(--color-background-dark); /* For Firefox */
-  }
-  
-  .items::-webkit-scrollbar {
-    height: 12px; /* Adjust scrollbar height */
-  }
-  
-  .items::-webkit-scrollbar-thumb {
-    background: var(--color-primary); /* Thumb color */
-    border-radius: 6px; /* Rounded corners */
-    border: 2px solid var(--color-background-dark); /* Creates padding effect */
-  }
-  
-  .items::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-light); /* Hover effect */
-  }
-  
-  .items::-webkit-scrollbar-track {
-    background: var(--color-background-dark); /* Track color */
-  }
-  
-  .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    min-width: 250px; /* Ensure items have a minimum width */
-    text-align: center;
-  }
-  
-  .dotPrimary {
-    height: 36px; /* Slightly larger */
-    width: 36px;
-    border: 3px solid var(--color-primary); /* Thicker border */
-    border-radius: 50%;
-    position: relative;
-    background-color: var(--color-background-dark);
-    transition: transform 0.2s ease; /* Smooth animation */
-  }
-  
-  .dotPrimary:hover {
-    transform: scale(1.2); /* Hover effect */
-  }
-  
-  .dotCore {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 18px;
-    width: 18px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-  }
-  
-  .info {
-    max-width: 230px;
-  }
-  
-  .company {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    transition: color 0.2s ease;
-  }
-  
-  .company:hover {
-    color: var(--color-primary-light); /* Hover effect */
-  }
-  
-  .description {
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-  }
-  
-  @media (min-width: 768px) {
-    .items {
-      gap: 64px;
-    }
-  
-    .company {
-      font-size: 1.125rem;
-    }
-  
-    .description {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .items {
-      gap: 80px;
-    }
-  
-    .company {
-      font-size: 1.25rem;
-    }
-  }
-
-  .experiences {
-    background-color: var(--color-background-dark);
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-  
-  .scrollContainer {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-  }
-  
-  .items {
-    display: flex;
-    gap: 16px;
-    justify-content: flex-start;
-    width: max-content;
-  }
-  
-  .card {
-    background-color: var(--color-background-light);
-    padding: 26px;
-    margin: 10px;
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    width: 550px;
-    height: 425px;
-    white-space: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .description {
-    font-size: 14px;
-    margin-top: 10px;
-    color: var(--color-text-secondary);
-    width: 200px;
-  }
-  
-  .viewButton {
-    margin-top: 15px;
-    padding: 8px 12px;
-    color: var(--color-primary);
-    background-color: transparent;
-    border: 1px solid var(--color-primary);
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .viewButton:hover {
-    background-color: var(--color-primary);
-    color: var(--color-background-light);
-  }
-  
-  .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    z-index: 1000;
-  }
-  
-  .popupContent {
-    background-color: var(--color-background-dark); /* Match theme background color */
-    color: var(--color-text-light); /* Better readability on dark background */
-    padding: 20px;
-    border-radius: 8px;
-    width: 50%; /* Reduced size for a more balanced popup */
-    max-width: 800px;
-    height: auto; /* Adjust height dynamically */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif; /* Better font for readability */
-  }
-  .cardImage {
-    margin-bottom: 10px; /* Adjust this value as needed */
-  }
-  .popupImage {
-    width: 99%;
-    height: auto;
-    object-fit: cover; /* Ensure image covers the space */
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .popupContent h3 {
-    color: var(--color-text-regular);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font style for title */
-  }
-  
-  .closeButton {
-    margin-top: 10px;
-    padding: 8px 12px;
-    color: var(--color-primary);
-    background-color: transparent;
-    border: 1px solid var(--color-primary);
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .closeButton:hover {
-    background-color: var(--color-primary);
-    color: var(--color-background-light);
-  }
-  .popupScroll {
-    max-height: 700px;
-    overflow-y: auto;
-    padding: 10px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .popupScroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .popupContent {
-      width: 75%;
-    }
-  }
-  
-.scrollContainer {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  white-space: nowrap;
+  background-color: var(--color-background-dark);
+  padding: 32px;
   display: flex;
-  width: 100%;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
 }
 
-.scrollContainer::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari */
+.scrollContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 90vw;
+  overflow: hidden;
 }
 
 .items {
   display: flex;
-  gap: 15px;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.items::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
+  background-color: var(--color-background-light);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+.cardImage {
+  border-radius: 8px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .navButton {
   cursor: pointer;
-  padding: 10px 15px;
-  font-size: 18px;
-  background-color: #007bff;
+  background-color: var(--color-primary);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.3s ease-in-out;
 }
 
 .navButton:hover {
-  background-color: #0056b3;
+  background-color: var(--color-primary-light);
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 1000;
+}
+
+.popupContent {
+  background-color: var(--color-background-dark); /* Match theme background color */
+  color: var(--color-text-light); /* Better readability on dark background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 50%; /* Reduced size for a more balanced popup */
+  max-width: 800px;
+  height: auto; /* Adjust height dynamically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif; /* Better font for readability */
+}
+.cardImage {
+  margin-bottom: 10px; /* Adjust this value as needed */
+}
+.popupImage {
+  width: 99%;
+  height: auto;
+  object-fit: cover; /* Ensure image covers the space */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.popupContent h3 {
+  color: var(--color-text-regular);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font style for title */
+}
+
+.closeButton {
+  margin-top: 10px;
+  padding: 8px 12px;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background-light);
+}
+
+.popupScroll {
+  max-height: 700px;
+  overflow-y: auto;
+  padding: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.popupScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.readMoreButton {
+  margin-top: 15px;
+  padding: 8px 12px;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.readMoreButton:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background-light);
+}

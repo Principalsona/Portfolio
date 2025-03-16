@@ -1,8 +1,8 @@
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import styles from "./Awards.module.css";
 import { ConstrainedTitle } from "@/components/SectionTitle";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import styles from "./Awards.module.css";
-import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
 
 const awardsData = [
   {
@@ -62,94 +62,87 @@ const awardsData = [
   },
 ];
 
-const Awards: React.FC = () => {
-  const [selectedAward, setSelectedAward] = useState<{ title: string; description: string; image: string } | null>(null);
+const Awards = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const [popupOpen, setPopupOpen] = useState(false);
-    const [popupData, setPopupData] = useState<{ imageUrl: string; description: string; name: string }>({
-      imageUrl: "",
-      description: "",
-      name: "",
-    });
-  
-    const handleMarkerClick = (name: string, imageUrl: string, description: string) => {
-      setPopupData({ name, imageUrl, description });
-      setPopupOpen(true);
-    };
-  
-    const handleClosePopup = () => {
-      setPopupOpen(false);
-      setPopupData({ name: "", imageUrl: "", description: "" });
-    };
+  const [popupData, setPopupData] = useState<{ title: string; description: string; image: string } | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  // // Function to scroll left
-  // const scrollLeft = () => {
-  //   if (scrollRef.current) {
-  //     scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
-  //   }
-  // };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollLeft += 300;
+        if (
+          scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
+          scrollRef.current.scrollWidth
+        ) {
+          scrollRef.current.scrollLeft = 0;
+        }
+      }
+    }, 3000);
 
-  // // Function to scroll right
-  // const scrollRight = () => {
-  //   if (scrollRef.current) {
-  //     scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
-  //   }
-  // };
+    return () => clearInterval(interval);
+  }, []);
 
-  // // Auto-scroll logic with alternating direction
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (scrollRef.current) {
-  //       if (scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= scrollRef.current.scrollWidth) {
-  //         scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-  //       } else {
-  //         scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
-  //       }
-  //     }
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += direction === "left" ? -300 : 300;
+    }
+  };
+
+  const handleReadMore = (award: { title: string; description: string; image: string }) => {
+    setPopupData(award);
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setPopupData(null);
+  };
 
   return (
     <div id="Awards" className={styles.experiences}>
       <MaxWidthWrapper>
         <ConstrainedTitle side="left">Awards</ConstrainedTitle>
-        <div className={styles.controls}>
-          {/* Left Scroll Button */}
-          {/* <button className={styles.navButton} onClick={scrollLeft}>
-            ❮
-          </button> */}
-          
-          {/* Scrollable Container */}
-          <div className={styles.scrollContainer} ref={scrollRef}>
-            <div className={styles.items}>
-              {awardsData.map((award, index) => (
-                <div key={index} className={styles.card} onClick={() => setSelectedAward(award)}>
-                  <Image src={award.image} alt={award.title} width={100} height={100} className={styles.cardImage} />                  <h4 className={styles.company}>{award.title}</h4>
-                  <p className={styles.description}>{award.description}</p>
-                  <button className={styles.viewButton} onClick={() => setSelectedAward(award)}>View Award</button>
-                </div>
-              ))}
+      <div className={styles.scrollContainer}>
+        <button className={styles.navButton} onClick={() => scroll("left")}>
+          &#8592;
+        </button>
+        <div className={styles.items} ref={scrollRef}>
+          {awardsData.map((award, index) => (
+            <div key={index} className={styles.card}>
+              <Image
+                src={award.image}
+                alt={award.title}
+                width={200}
+                height={150}
+                className={styles.cardImage}
+              />
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>{award.title}</h3>
+                <p className={styles.cardDescription}>
+                  {award.description.length > 100 ? `${award.description.substring(0, 100)}...` : award.description}
+                </p>
+                {award.description.length > 100 && (
+                  <button className={styles.readMoreButton} onClick={() => handleReadMore(award)}>Read More</button>
+                )}
+              </div>
             </div>
-          </div>
-
-          {/* Right Scroll Button */}
-          {/* <button className={styles.navButton} onClick={scrollRight}>
-            ❯
-          </button> */}
+          ))}
         </div>
+        <button className={styles.navButton} onClick={() => scroll("right")}>
+          &#8594;
+        </button>
+      </div>
       </MaxWidthWrapper>
-
-      {/* Award Popup */}
-      {selectedAward && (
-        <div className={styles.popup} onClick={handleClosePopup}>
-          <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.popupScroll}>
-              <Image src={selectedAward.image} alt={selectedAward.title} width={500} height={300} className={styles.popupImage} />
-              <h3>{selectedAward.title}</h3>
-              <p>{selectedAward.description}</p>
-            </div>
-            <button className={styles.closeButton} onClick={() => setSelectedAward(null)}>Close</button>
+      {isPopupOpen && popupData && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+          <div className={styles.popupScroll}>
+            <Image src={popupData.image} alt={popupData.title} width={300} height={200} className={styles.popupImage} />
+            <h3 className={styles.popupTitle}>{popupData.title}</h3>
+            <p className={styles.popupDescription}>{popupData.description}</p>
+            <button className={styles.closeButton} onClick={handleClosePopup}>Close</button>
+          </div>
           </div>
         </div>
       )}
