@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
   const typeTitles: Record<string, string> = {
     type1: "Blogs",
     type2: "Patent",
-    type3: "Funding",
+    type3: "Grants Received",
     type4: "Committees",
     type5: "Affiliations",
     type6: "Talks",
