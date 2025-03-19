@@ -38,7 +38,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
           <div
             key={idx}
             className={styles.gridItem}
-            style={{ height: project.type === "type4" ? "520px" : "450px" }}
+            style={{ height: project.type === "type4" ? "550px" : "450px" }}
           >
             <a href={project.website} target="_blank" rel="noopener noreferrer">
               <Image
@@ -83,6 +83,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
               alt={modalData.name}
             />
             <h2 className={styles.modalTitle}>{modalData.title}</h2>
+            {modalData.years && <h2 className={styles.modalYears}>{modalData.years}</h2>}
             <p className={styles.modalDescription}>{modalData.description}</p>
             <button className={styles.closeButton} onClick={closeModal}>Close</button>
           </div>

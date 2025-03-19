@@ -175,7 +175,10 @@
   font-size: 1.5rem;
   margin: 16px 0;
 }
-
+.modalYears {
+  font-size: 1.2rem;
+  margin: 16px 0;
+}
 .modalDescription {
     color: var(--color-text-regular);
     font-weight:100;
