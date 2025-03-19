@@ -38,7 +38,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
           <div
             key={idx}
             className={styles.gridItem}
-            style={{ height: project.type === "type4" ? "550px" : "450px" }}
+            style={{ height: project.type === "type4" ? "520px" : "450px" }}
           >
             <a href={project.website} target="_blank" rel="noopener noreferrer">
               <Image
