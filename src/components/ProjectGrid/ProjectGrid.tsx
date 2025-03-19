@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styles from "./ProjectGrid.module.css";
 import Image from "next/image";
 
-// Define the IProject interface with a years field
 export interface IProject {
   title: string;
-  years?: string; // Make years optional
+  years?: string;
   description: string;
   imgSrc: string;
   name: string;
   website: string;
+  type?: string;
 }
 
 export interface IProps {
@@ -27,11 +27,19 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
     setModalData(null);
   };
 
+  const truncateText = (text: string, limit: number) => {
+    return text.length > limit ? text.substring(0, limit) + '...' : text;
+  };
+
   return (
     <div className={styles.projectGrid}>
       <div className={styles.grid}>
         {projects.map((project, idx) => (
-          <div key={idx} className={styles.gridItem}>
+          <div
+            key={idx}
+            className={styles.gridItem}
+            style={{ height: project.type === "type4" ? "550px" : "450px" }}
+          >
             <a href={project.website} target="_blank" rel="noopener noreferrer">
               <Image
                 className={styles.projectThumbnail}
@@ -41,9 +49,8 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
                 alt={project.name}
               />
             </a>
-            <h3 className={styles.title}>{project.title}</h3>
+            <h3 className={styles.title}>{truncateText(project.title, 65)}</h3>
 
-            {/* Conditionally render years if it exists */}
             {project.years && <h4 className={styles.years}>{project.years}</h4>}
 
             <p className={styles.description}>
@@ -52,7 +59,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
                   {project.description.substring(0, 100)}... <br />
                   <button
                     className={styles.readMoreButton}
-                    onClick={() => openModal(project)} // Open modal on click
+                    onClick={() => openModal(project)}
                   >
                     Read More
                   </button>
@@ -65,7 +72,6 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
         ))}
       </div>
 
-      {/* Modal */}
       {modalData && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
@@ -77,11 +83,8 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
               alt={modalData.name}
             />
             <h2 className={styles.modalTitle}>{modalData.title}</h2>
-            {/* Display full description in the modal */}
             <p className={styles.modalDescription}>{modalData.description}</p>
-            <button className={styles.closeButton} onClick={closeModal}>
-              Close
-            </button>
+            <button className={styles.closeButton} onClick={closeModal}>Close</button>
           </div>
         </div>
       )}
