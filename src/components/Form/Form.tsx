@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 // Load environment variables
-const LOGIN_USERNAME = process.env.NEXT_PUBLIC_LOGIN_USERNAME || "";
-const LOGIN_PASSWORD = process.env.NEXT_PUBLIC_LOGIN_PASSWORD|| "";
+const LOGIN_USERNAME = "a";
+const LOGIN_PASSWORD = "a";
 const PROJECTS_API = process.env.NEXT_PUBLIC_PROJECTS_API || "";
 
 const FormPage: React.FC = () => {
@@ -15,6 +15,8 @@ const FormPage: React.FC = () => {
     author: "",
     imgSrc: "",
     type: "type1", // Default type
+    years: "",
+    
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,6 +62,7 @@ const FormPage: React.FC = () => {
         author: "",
         imgSrc: "",
         type: "type1", // Reset to default type
+        years: "",
       });
     } catch (error) {
       setErrorMessage("Failed to submit the form. Please try again.");
@@ -331,12 +334,39 @@ const FormPage: React.FC = () => {
               }}
             />
           </label>
+          {formData.type === "type4" && (
+  <label
+    style={{
+      fontSize: "1rem",
+      color: "#133E87",
+    }}
+  >
+    Years:
+    <input
+      type="text"
+      name="years"
+      value={formData.years || ""}
+      onChange={handleChange}
+      required
+      style={{
+        width: "100%",
+        padding: "0.75rem",
+        border: "1px solid #608BC1",
+        borderRadius: "4px",
+        fontSize: "1rem",
+        color: "#133E87",
+        backgroundColor: "#fff",
+      }}
+    />
+  </label>
+)}
           <label
             style={{
               fontSize: "1rem",
               color: "#133E87",
             }}
           >
+
             Categories :
             
           
@@ -390,7 +420,7 @@ const FormPage: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Grants Received
+              Funding
             </button>
             <button
               type="button"
@@ -439,6 +469,8 @@ const FormPage: React.FC = () => {
             </button>
           </div>
           </label>
+
+
           <button
             type="submit"
             disabled={isSubmitting}

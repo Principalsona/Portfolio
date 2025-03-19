@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import styles from "./ProjectGrid.module.css";
 import Image from "next/image";
 
-// Define the IProject interface locally
+// Define the IProject interface with a years field
 export interface IProject {
   title: string;
+  years?: string; // Make years optional
   description: string;
   imgSrc: string;
   name: string;
@@ -41,13 +42,17 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
               />
             </a>
             <h3 className={styles.title}>{project.title}</h3>
+
+            {/* Conditionally render years if it exists */}
+            {project.years && <h4 className={styles.years}>{project.years}</h4>}
+
             <p className={styles.description}>
               {project.description.length > 100 ? (
                 <>
                   {project.description.substring(0, 100)}... <br />
                   <button
                     className={styles.readMoreButton}
-                    onClick={() => openModal(project)}
+                    onClick={() => openModal(project)} // Open modal on click
                   >
                     Read More
                   </button>
@@ -60,6 +65,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
         ))}
       </div>
 
+      {/* Modal */}
       {modalData && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
@@ -71,6 +77,7 @@ const ProjectGrid: React.FC<IProps> = ({ projects }) => {
               alt={modalData.name}
             />
             <h2 className={styles.modalTitle}>{modalData.title}</h2>
+            {/* Display full description in the modal */}
             <p className={styles.modalDescription}>{modalData.description}</p>
             <button className={styles.closeButton} onClick={closeModal}>
               Close

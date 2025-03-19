@@ -64,12 +64,19 @@ const Projects: React.FC = () => {
   const typeTitles: Record<string, string> = {
     type1: "Blogs",
     type2: "Patent",
-    type3: "Grants Received",
+    type3: "Funding",
     type4: "Committees",
     type5: "Affiliations",
     type6: "Talks",
   };
-
+  const typeTitless: Record<string, string> = {
+    type1: "Blogs",
+    type2: "Patent",
+    type3: "Grands Receive",
+    type4: "Committees",
+    type5: "Affiliations",
+    type6: "Talks",
+  };
   return (
     <div className={styles.projects} id="projects">
       <MaxWidthWrapper>
@@ -86,7 +93,7 @@ const Projects: React.FC = () => {
             </React.Fragment>
           ))}
         </div>
-        <ConstrainedTitle side="left">{typeTitles[activeType]}</ConstrainedTitle>
+        <ConstrainedTitle side="left">{typeTitless[activeType]}</ConstrainedTitle>
         <div className={styles.projectList}>
           <ProjectGrid projects={projects.slice(0, visibleProjects)} />
           <div className={styles.buttonContainer}>

@@ -6,6 +6,12 @@
   z-index: 3;
   margin-top: 2rem; /* Ensure spacing from the top */
 }
+.years {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
 
 .title {
   color: var(--color-primary);

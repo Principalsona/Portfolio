@@ -11,9 +11,11 @@ export interface IBlog {
 }
 
 export interface IProject extends IBlog {
+  _id: string;    
   type: any;
   name: string;
   website: string;
+  createdAt: string; 
 }
 
 export interface IProps {
