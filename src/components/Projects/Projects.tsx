@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
     type2: "Patent",
     type3: "Funding",
     type4: "Committees",
-    type5: "Affiliations",
+    type5: "Association",
     type6: "Talks",
   };
   const typeTitless: Record<string, string> = {
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
     type2: "Patent",
     type3: "Grands Receive",
     type4: "Committees",
-    type5: "Affiliations",
+    type5: "Association",
     type6: "Talks",
   };
   return (
