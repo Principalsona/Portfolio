@@ -47,10 +47,10 @@ const App = ({ initialTheme }: { initialTheme: string }) => {
         )}
         {!showForm && <About />}
         {!showForm && <Experiences />}
+        {!showForm && <Awards />}
         {!showForm && <Blogs />}
         {!showForm && <Technical />}
         {!showForm && <Countries />}
-        {!showForm && <Awards />}
         {!showForm && <Education />}
         {!showForm && <Contact />}
         {!showForm && <Footer />}
